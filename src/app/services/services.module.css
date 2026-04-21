@@ -1,0 +1,265 @@
+.pageHead {
+  padding: clamp(56px, 8vw, 120px) 0 clamp(40px, 5vw, 72px);
+}
+
+.pillar {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(32px, 5vw, 80px);
+  padding: clamp(56px, 7vw, 100px) 0;
+  border-top: 1px solid var(--rule);
+  align-items: start;
+}
+
+.pillarHead {
+  position: sticky;
+  top: 120px;
+}
+
+.pillarNum {
+  font-family: var(--serif);
+  font-size: clamp(72px, 10vw, 140px);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.pillarNum em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.pillar h2 {
+  font-size: clamp(32px, 3.5vw, 48px);
+  margin: 16px 0 16px;
+}
+
+.pillar .lead {
+  max-width: 38ch;
+}
+
+.deliverables {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.deliverables li {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 42px 1fr auto;
+  gap: 20px;
+  align-items: start;
+}
+
+.dNum {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  letter-spacing: 0.14em;
+  padding-top: 4px;
+}
+
+.dBody h4 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-family: var(--sans);
+  font-weight: 500;
+}
+
+.dBody p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  max-width: 48ch;
+}
+
+.dTag {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-mute);
+  padding-top: 6px;
+}
+
+@media (max-width: 900px) {
+  .pillar {
+    grid-template-columns: 1fr;
+  }
+
+  .pillarHead {
+    position: static;
+  }
+
+  .deliverables li {
+    grid-template-columns: 42px 1fr;
+  }
+
+  .dTag {
+    grid-column: 2;
+  }
+}
+
+/* Pricing */
+.pricing {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.price {
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  background: var(--bg-elev);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: border-color 0.2s;
+}
+
+.price:hover {
+  border-color: var(--ink-mute);
+}
+
+.priceFeature {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+
+.priceFeature h3,
+.priceFeature .priceAmt {
+  color: var(--bg);
+}
+
+.priceFeature .priceFoot {
+  color: color-mix(in oklab, var(--bg) 65%, transparent);
+}
+
+.priceFeature ul li {
+  color: color-mix(in oklab, var(--bg) 80%, transparent);
+  border-color: color-mix(in oklab, var(--bg) 20%, transparent);
+}
+
+.priceTag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.priceFeature .priceTag {
+  color: var(--accent);
+}
+
+.price h3 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.priceAmt {
+  font-family: var(--serif);
+  font-size: 52px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.priceAmt small {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink-mute);
+  letter-spacing: 0;
+}
+
+.price ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.price li {
+  padding: 12px 0;
+  border-top: 1px solid var(--rule);
+  font-size: 14px;
+  color: var(--ink-soft);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.price li::before {
+  content: '—';
+  color: var(--accent);
+  margin-top: -1px;
+}
+
+.priceFoot {
+  font-size: 12px;
+  color: var(--ink-mute);
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.priceCta {
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .pricing {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FAQ */
+.faqList {
+  border-top: 1px solid var(--rule);
+}
+
+.faq {
+  border-bottom: 1px solid var(--rule);
+  padding: 28px 0;
+}
+
+.faq summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  font-family: var(--serif);
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1.25;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: '+';
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 28px;
+  color: var(--ink-mute);
+  transition: transform 0.3s;
+}
+
+.faq[open] summary::after {
+  content: '–';
+}
+
+.faq p {
+  margin: 20px 0 0;
+  color: var(--ink-soft);
+  max-width: 68ch;
+  font-size: 16px;
+  line-height: 1.6;
+}

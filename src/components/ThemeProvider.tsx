@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState, useSyncExternalStore } from 'react';
 
 type Theme = 'light' | 'dark';
 
@@ -12,18 +12,38 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+function getInitialTheme(): Theme {
+  if (typeof window === 'undefined') return 'light';
+  const stored = localStorage.getItem('ab-theme') as Theme | null;
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  return stored || (prefersDark ? 'dark' : 'light');
+}
+
+function subscribe(callback: () => void) {
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  mediaQuery.addEventListener('change', callback);
+  window.addEventListener('storage', callback);
+  return () => {
+    mediaQuery.removeEventListener('change', callback);
+    window.removeEventListener('storage', callback);
+  };
+}
+
+function getSnapshot(): Theme {
+  return getInitialTheme();
+}
+
+function getServerSnapshot(): Theme {
+  return 'light';
+}
+
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>('light');
-  const [mounted, setMounted] = useState(false);
+  const initialTheme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const [theme, setThemeState] = useState<Theme>(initialTheme);
 
   useEffect(() => {
-    setMounted(true);
-    const stored = localStorage.getItem('ab-theme') as Theme | null;
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initial = stored || (prefersDark ? 'dark' : 'light');
-    setThemeState(initial);
-    document.documentElement.setAttribute('data-theme', initial);
-  }, []);
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
@@ -34,24 +54,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
-
-  // Prevent flash of wrong theme
-  if (!mounted) {
-    return (
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function() {
-              const stored = localStorage.getItem('ab-theme');
-              const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-              const theme = stored || (prefersDark ? 'dark' : 'light');
-              document.documentElement.setAttribute('data-theme', theme);
-            })();
-          `,
-        }}
-      />
-    );
-  }
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>

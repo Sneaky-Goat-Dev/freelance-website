@@ -1,0 +1,163 @@
+.pageHead {
+  padding: clamp(56px, 8vw, 120px) 0 clamp(40px, 5vw, 72px);
+}
+
+.aboutHero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(32px, 5vw, 80px);
+  align-items: center;
+  padding: clamp(32px, 5vw, 64px) 0 clamp(64px, 8vw, 120px);
+}
+
+.aboutHero h2 {
+  font-size: clamp(48px, 7vw, 104px);
+}
+
+.heroLead {
+  margin-top: 24px;
+  font-size: 19px;
+  max-width: 42ch;
+}
+
+@media (max-width: 900px) {
+  .aboutHero {
+    grid-template-columns: 1fr;
+  }
+}
+
+.manifesto {
+  padding: clamp(64px, 8vw, 120px) 0;
+  border-top: 1px solid var(--rule);
+}
+
+.manifestoGrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+}
+
+.manifestoGrid p {
+  font-family: var(--serif);
+  font-size: clamp(22px, 2vw, 30px);
+  line-height: 1.35;
+  color: var(--ink);
+  max-width: 32ch;
+  margin: 0 0 28px;
+  text-wrap: pretty;
+}
+
+.manifestoGrid p em {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 900px) {
+  .manifestoGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Career */
+.career {
+  padding: clamp(64px, 8vw, 120px) 0;
+  border-top: 1px solid var(--rule);
+}
+
+.careerList {
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr;
+  gap: 32px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+
+.careerList:first-of-type {
+  border-top: 1px solid var(--rule);
+}
+
+.careerYear {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+}
+
+.careerRole {
+  font-family: var(--serif);
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.careerDesc {
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .careerList {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.value {
+  padding: 32px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+}
+
+.value h4 {
+  font-family: var(--serif);
+  font-size: 24px;
+  margin: 0 0 10px;
+}
+
+.value p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+@media (max-width: 780px) {
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.offHours {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.offHours figure {
+  margin: 0;
+}
+
+.offHours figcaption {
+  margin-top: 12px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 780px) {
+  .offHours {
+    grid-template-columns: 1fr 1fr;
+  }
+}

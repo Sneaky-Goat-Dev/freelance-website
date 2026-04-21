@@ -1,0 +1,277 @@
+/* Hero */
+.hero {
+  padding: clamp(48px, 8vw, 96px) 0 clamp(72px, 10vw, 120px);
+  position: relative;
+}
+
+.heroMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.heroDisplay {
+  font-size: clamp(56px, 11vw, 172px);
+}
+
+.heroSub {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 56px;
+  align-items: end;
+}
+
+.heroSub p {
+  font-size: clamp(16px, 1.4vw, 19px);
+  max-width: 48ch;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.heroCta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 780px) {
+  .heroSub {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* Work Grid */
+.workGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 32px;
+}
+
+.workItem {
+  grid-column: span 6;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.workItemWide {
+  grid-column: span 12;
+}
+
+.imgframe {
+  aspect-ratio: 4/3;
+}
+
+.imgframeWide {
+  aspect-ratio: 16/7;
+}
+
+.workMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.workTitle {
+  font-family: var(--serif);
+  font-size: 28px;
+  margin: 0;
+  flex: 1 1 auto;
+}
+
+.workCat {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  padding-top: 10px;
+  flex-shrink: 0;
+}
+
+.workBlurb {
+  color: var(--ink-soft);
+  font-size: 15px;
+  max-width: 52ch;
+}
+
+@media (max-width: 780px) {
+  .workItem,
+  .workItemWide {
+    grid-column: span 12;
+  }
+}
+
+/* Services Grid */
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service {
+  padding: 36px 32px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  background: var(--bg-elev);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color 0.2s, transform 0.3s;
+}
+
+.service:hover {
+  border-color: var(--ink-mute);
+  transform: translateY(-2px);
+}
+
+.serviceNum {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  letter-spacing: 0.14em;
+}
+
+.service h3 {
+  font-size: 26px;
+  margin: 0;
+}
+
+.service p {
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  padding: 48px 0;
+}
+
+.stat {
+  border-left: 1px solid var(--rule);
+  padding-left: 20px;
+}
+
+.statNum {
+  font-family: var(--serif);
+  font-size: clamp(40px, 4.5vw, 64px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-mute);
+  margin-top: 8px;
+}
+
+@media (max-width: 780px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+/* Testimonials */
+.testimonials {
+  background: var(--bg-sunken);
+  border-radius: var(--radius-lg);
+  padding: clamp(48px, 6vw, 80px);
+}
+
+.testiGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.testi q {
+  font-family: var(--serif);
+  font-size: clamp(22px, 1.8vw, 26px);
+  line-height: 1.3;
+  color: var(--ink);
+  display: block;
+  margin-bottom: 24px;
+  text-wrap: balance;
+}
+
+.testi q::before {
+  content: '"';
+}
+
+.testi q::after {
+  content: '"';
+}
+
+.testiAuthor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.testiName {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.testiRole {
+  font-size: 12px;
+  color: var(--ink-mute);
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 900px) {
+  .testiGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* CTA */
+.ctaBlock {
+  padding: clamp(80px, 10vw, 140px) 0;
+  text-align: center;
+}
+
+.ctaBlock .display {
+  margin-bottom: 32px;
+}
