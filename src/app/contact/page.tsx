@@ -13,17 +13,10 @@ const serviceOptions = [
   { id: 's-other', value: 'other', label: 'Not sure yet' },
 ];
 
-const budgetOptions = [
-  { id: 'b1', value: '<5k', label: 'Under $5k' },
-  { id: 'b2', value: '5-15k', label: '$5k – $15k' },
-  { id: 'b3', value: '15-30k', label: '$15k – $30k' },
-  { id: 'b4', value: '>30k', label: '$30k+' },
-];
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
-  const [selectedBudget, setSelectedBudget] = useState<string>('');
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -89,24 +82,6 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className={styles.field}>
-                <label>Rough budget</label>
-                <div className={`${styles.chips} ${styles.budgetGrid}`}>
-                  {budgetOptions.map((option) => (
-                    <div key={option.id}>
-                      <input
-                        type="radio"
-                        id={option.id}
-                        name="budget"
-                        value={option.value}
-                        checked={selectedBudget === option.value}
-                        onChange={() => setSelectedBudget(option.value)}
-                      />
-                      <label htmlFor={option.id}>{option.label}</label>
-                    </div>
-                  ))}
-                </div>
-              </div>
 
               <div className={styles.field}>
                 <label htmlFor="message">Tell me about the project</label>
@@ -194,9 +169,9 @@ export default function ContactPage() {
           </div>
 
           <div className={styles.asideBlock}>
-            <h3>Based in</h3>
+            <h3>Working with</h3>
             <p>
-              United States · Eastern time. Working remotely with businesses across North America and Europe. One optional on-site day per project.
+              Businesses across the United States, United Kingdom &amp; South Africa. All projects run remotely with video calls for kickoff and check-ins.
             </p>
           </div>
         </aside>

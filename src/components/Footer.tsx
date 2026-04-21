@@ -12,7 +12,7 @@ export default function Footer() {
               Thanks for stopping <em>by.</em>
             </div>
             <p style={{ marginTop: '24px', maxWidth: '36ch', color: 'var(--ink-soft)' }}>
-              Based in the United States. Working with businesses across North America &amp; Europe.
+              Working with businesses across the United States, United Kingdom &amp; South Africa.
             </p>
           </div>
           <div>

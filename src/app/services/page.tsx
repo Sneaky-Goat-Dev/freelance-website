@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import ArrowIcon from '@/components/ArrowIcon';
 import styles from './services.module.css';
@@ -45,7 +45,7 @@ const pillars = [
       {
         letter: 'A',
         title: 'Static-first architecture',
-        desc: 'Astro, Eleventy, or Next.js depending on what the site needs. CDN-delivered. Typical largest-contentful-paint under 1.5s on a 3G phone.',
+        desc: 'Next.js or Astro depending on what the site needs. CDN-delivered. Typical largest-contentful-paint under 1.5s on a 3G phone.',
         tag: 'Week 3–5',
       },
       {
@@ -57,7 +57,7 @@ const pillars = [
       {
         letter: 'C',
         title: 'Integrations that fit',
-        desc: 'Shopify, Stripe, Resy, ThinkReservations, Formspree, Mailchimp, Buttondown, Calendly — whatever your business already runs on.',
+        desc: 'Shopify, Stripe, booking systems, Formspree, Mailchimp, Calendly — whatever your business already runs on.',
         tag: 'Week 4–6',
       },
       {
@@ -71,7 +71,7 @@ const pillars = [
   {
     num: '03',
     title: 'Hosting & Care',
-    lead: "This is where most agencies disappear. I don't. Your site lives on infrastructure I run, and I'm the person you email when the Wi-Fi goes down at the cafe.",
+    lead: "This is where most agencies disappear. I don't. Your site lives on infrastructure I run, and I'm the person you email when something needs fixing.",
     deliverables: [
       {
         letter: 'A',
@@ -88,7 +88,7 @@ const pillars = [
       {
         letter: 'C',
         title: 'Content updates',
-        desc: 'Small edits included. New page, new photos, a rewritten About — usually turned around in a day or two, at no extra cost on Care+.',
+        desc: 'Small edits included. New page, new photos, a rewritten About — usually turned around in a day or two.',
         tag: 'Ongoing',
       },
       {
@@ -101,60 +101,25 @@ const pillars = [
   },
 ];
 
-const pricing = [
-  {
-    tag: 'Starter',
-    title: 'The Refresh',
-    price: '$4.8k',
-    monthly: '+ $45/mo',
-    features: [
-      '1–3 pages, copy included',
-      'Existing brand, polished',
-      '2 rounds of revisions',
-      '4-week turnaround',
-      'Hosting & care included',
-    ],
-    foot: 'Best for: solo operators, single-location shops.',
-    featured: false,
-  },
-  {
-    tag: 'Most common',
-    title: 'The Small Business',
-    price: '$12k',
-    monthly: '+ $85/mo',
-    features: [
-      '5–10 page custom site',
-      'Brand refresh + art direction',
-      'CMS for non-technical editing',
-      'One primary integration (e‑commerce, booking, etc.)',
-      '6–8 week turnaround',
-      'Hosting & care+ included',
-    ],
-    foot: 'Best for: cafés, restaurants, clinics, law firms, boutique inns.',
-    featured: true,
-  },
-  {
-    tag: 'Custom',
-    title: 'The Full Build',
-    price: 'From $22k',
-    monthly: '+ $150/mo',
-    features: [
-      '10+ pages, multi-audience',
-      'Full identity work',
-      'Complex integrations & flows',
-      'On-location photography (optional)',
-      '10–14 week timeline',
-      'Hosting, care, priority support',
-    ],
-    foot: 'Best for: multi-location, multi-service, or fundraising businesses.',
-    featured: false,
-  },
-];
+type Currency = 'ZAR' | 'USD' | 'GBP';
+
+interface PricingData {
+  symbol: string;
+  oneOff: string;
+  monthly: string;
+  locale: string;
+}
+
+const pricingByCurrency: Record<Currency, PricingData> = {
+  ZAR: { symbol: 'R', oneOff: '5,000', monthly: '500', locale: 'South Africa' },
+  USD: { symbol: '$', oneOff: '275', monthly: '28', locale: 'United States' },
+  GBP: { symbol: '£', oneOff: '220', monthly: '22', locale: 'United Kingdom' },
+};
 
 const faqs = [
   {
     q: 'Do I have to host with you?',
-    a: "Yes. It's a package, not a menu. I host every site I build because that's how I make sure it still works a year from now — and because the integrated pricing saves most clients a few thousand a year in agency retainer fees. If you absolutely need to host elsewhere, I can recommend another builder.",
+    a: "Yes. It's a package, not a menu. I host every site I build because that's how I make sure it still works a year from now — and because the integrated pricing saves you hassle. If you absolutely need to host elsewhere, I can recommend another builder.",
   },
   {
     q: 'What happens if I want to leave?',
@@ -162,24 +127,54 @@ const faqs = [
   },
   {
     q: 'How long does a project take?',
-    a: 'Four to fourteen weeks, depending on scope. The Small Business package — the one most clients land on — averages seven weeks from kickoff to launch.',
-  },
-  {
-    q: 'Do you do ongoing retainers?',
-    a: 'Sort of. Every site includes Care (hosting + monitoring + backups) or Care+ (adds small content edits). I don\'t do open-ended "growth retainers" — I\'d rather you call me when you need something real.',
+    a: 'Four to eight weeks, depending on scope and complexity. Most projects land around six weeks from kickoff to launch.',
   },
   {
     q: 'What if I already have a designer?',
-    a: 'Happy to collaborate. Roughly a quarter of my work is building out designs from an existing brand team. Pricing adjusts downward accordingly.',
+    a: 'Happy to collaborate. I can build out designs from an existing brand team. Pricing adjusts accordingly.',
   },
   {
-    q: 'Where are you based?',
-    a: 'United States. I work with businesses across North America and Europe. Most projects run remotely with one optional on-site day for kickoff or photography.',
+    q: 'Where do you work?',
+    a: 'I work with businesses in the United States, United Kingdom, and South Africa. Most projects run remotely with video calls for kickoff and check-ins.',
   },
 ];
 
+function detectCurrency(): Currency {
+  if (typeof window === 'undefined') return 'USD';
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const locale = navigator.language;
+
+  // Check for South Africa
+  if (timezone.includes('Johannesburg') || locale.includes('za') || locale === 'en-ZA') {
+    return 'ZAR';
+  }
+  // Check for UK
+  if (timezone.includes('London') || locale === 'en-GB') {
+    return 'GBP';
+  }
+  // Default to USD
+  return 'USD';
+}
+
+function subscribeToCurrency() {
+  // Currency doesn't change, but we need a valid subscription
+  return () => {};
+}
+
+function getCurrencySnapshot(): Currency {
+  return detectCurrency();
+}
+
+function getCurrencyServerSnapshot(): Currency {
+  return 'USD';
+}
+
 export default function ServicesPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const detectedCurrency = useSyncExternalStore(subscribeToCurrency, getCurrencySnapshot, getCurrencyServerSnapshot);
+  const [currency, setCurrency] = useState<Currency>(detectedCurrency);
+
+  const pricing = pricingByCurrency[currency];
 
   return (
     <>
@@ -227,41 +222,62 @@ export default function ServicesPage() {
             <span className="eyebrow">Pricing</span>
             <div>
               <h2>
-                Three honest shapes.<br />
-                <span className="serif-italic">Fixed scope, fixed fee.</span>
+                Simple, honest pricing.<br />
+                <span className="serif-italic">One package, everything included.</span>
               </h2>
               <p className="lead" style={{ marginTop: '24px' }}>
-                Most small businesses need one of three things. If your project doesn&apos;t fit, we&apos;ll scope it together — transparently, in writing.
+                No tiers to compare. No hidden fees. Just one straightforward package that includes everything you need.
               </p>
             </div>
           </div>
 
-          <div className={styles.pricing}>
-            {pricing.map((plan, index) => (
-              <div
-                key={index}
-                className={`${styles.price} ${plan.featured ? styles.priceFeature : ''}`}
-              >
-                <span className={styles.priceTag}>{plan.tag}</span>
-                <h3>{plan.title}</h3>
-                <div className={styles.priceAmt}>
-                  {plan.price} <small>{plan.monthly}</small>
-                </div>
-                <ul>
-                  {plan.features.map((feature, i) => (
-                    <li key={i}>{feature}</li>
+          <div className={styles.pricing} style={{ justifyContent: 'center' }}>
+            <div className={`${styles.price} ${styles.priceFeature}`} style={{ maxWidth: '480px' }}>
+              <span className={styles.priceTag}>Complete Package</span>
+              <h3>Design, Build & Host</h3>
+
+              <div className={styles.currencyToggle}>
+                  <span className="eyebrow" style={{ marginRight: '12px' }}>Currency:</span>
+                  {(['ZAR', 'USD', 'GBP'] as Currency[]).map((cur) => (
+                    <button
+                      key={cur}
+                      onClick={() => setCurrency(cur)}
+                      className={`${styles.currencyBtn} ${currency === cur ? styles.currencyBtnActive : ''}`}
+                    >
+                      {cur}
+                    </button>
                   ))}
-                </ul>
-                <div className={styles.priceFoot}>{plan.foot}</div>
-                <Link
-                  className={`btn btn-ghost ${styles.priceCta}`}
-                  href="/contact"
-                  style={plan.featured ? { borderColor: 'rgba(255,255,255,0.2)', color: 'var(--bg)' } : {}}
-                >
-                  Let&apos;s talk
-                </Link>
+                </div>
+
+              <div className={styles.priceAmt}>
+                {pricing.symbol}{pricing.oneOff} <small>once-off</small>
               </div>
-            ))}
+              <div className={styles.priceMonthly}>
+                + {pricing.symbol}{pricing.monthly}/mo <span>for hosting & maintenance</span>
+              </div>
+
+              <ul>
+                <li>Custom design tailored to your brand</li>
+                <li>Fully responsive development</li>
+                <li>CMS for easy content updates</li>
+                <li>Performance optimized (98+ Lighthouse)</li>
+                <li>SSL, CDN, and daily backups</li>
+                <li>Ongoing support & small edits included</li>
+                <li>4–6 week turnaround</li>
+              </ul>
+
+              <div className={styles.priceFoot}>
+                Prices shown in {pricing.locale} currency. Working with businesses in the US, UK, and South Africa.
+              </div>
+
+              <Link
+                className={`btn btn-ghost ${styles.priceCta}`}
+                href="/contact"
+                style={{ borderColor: 'rgba(255,255,255,0.2)', color: 'var(--bg)' }}
+              >
+                Let&apos;s talk
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -304,7 +320,7 @@ export default function ServicesPage() {
         <div className="container">
           <h2 className="display">
             Ready to<br />
-            <span className="serif-italic">get specific?</span>
+            <span className="serif-italic">get started?</span>
           </h2>
           <p className="lead" style={{ margin: '24px auto 40px' }}>
             Tell me about the business. I&apos;ll tell you what I&apos;d do.

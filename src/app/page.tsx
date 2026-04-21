@@ -6,45 +6,27 @@ import styles from './home.module.css';
 
 const workItems = [
   {
-    title: 'Halden & Oat — Neighborhood Coffee',
-    category: 'E‑commerce · 2025',
-    blurb: "A single-origin roaster's first real storefront: a bean subscription, wholesale orders, and a cafe menu — all on one quiet site.",
-    image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1600&q=80&auto=format&fit=crop',
+    title: 'The Auto Shed — BMW Specialists',
+    category: 'Automotive · 2025',
+    blurb: "A BMW specialist workshop that needed a site conveying expertise and passion for German engineering. Clean, professional, built to convert.",
+    image: 'https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=1600&q=80&auto=format&fit=crop',
+    link: 'https://autoshed-bmw.vercel.app/',
     wide: true,
   },
   {
-    title: 'Bexley & Co.',
-    category: 'Law · 2024',
-    blurb: 'An estate-planning firm that wanted to feel approachable without feeling casual. A type-led brand refresh and a seven-page site.',
-    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80&auto=format&fit=crop',
+    title: 'Relay',
+    category: 'SaaS · 2025',
+    blurb: 'An AI-powered platform that needed a landing page as sophisticated as their product. Focused on clarity and conversion.',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80&auto=format&fit=crop',
+    link: 'https://userelay.ai',
     wide: false,
   },
   {
-    title: 'Meridian Supper Club',
-    category: 'Restaurant · 2025',
-    blurb: 'A farm-driven supper club with a 20-seat dining room. Online reservations, menus that change weekly, and a slow-email newsletter.',
-    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80&auto=format&fit=crop',
-    wide: false,
-  },
-  {
-    title: 'Kestrel Joinery',
-    category: 'Trade · 2024',
-    blurb: 'A custom cabinet shop that was losing leads to a decade-old site. A new portfolio, an honest quote flow, and double the bookings in ninety days.',
-    image: 'https://images.unsplash.com/photo-1556910096-6f5e72db6803?w=1200&q=80&auto=format&fit=crop',
-    wide: false,
-  },
-  {
-    title: 'The Alder Inn',
-    category: 'Hospitality · 2023',
-    blurb: "A nine-room boutique inn. A booking system that doesn't feel like a booking system, and a journal their guests actually read.",
-    image: 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1200&q=80&auto=format&fit=crop',
-    wide: false,
-  },
-  {
-    title: 'North Field Clinic',
-    category: 'Healthcare · 2024',
-    blurb: 'A family practice in the Midwest. Online intake forms, insurance transparency, and a site a 70-year-old can navigate on a Tuesday.',
-    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80&auto=format&fit=crop',
+    title: 'The Golden Fork',
+    category: 'Restaurant · 2024',
+    blurb: 'A farm-to-table restaurant with seasonal menus. Warm, inviting, with easy updates and reservation integration.',
+    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80&auto=format&fit=crop',
+    link: '#',
     wide: false,
   },
 ];
@@ -69,28 +51,28 @@ const services = [
 
 const testimonials = [
   {
-    quote: "Adam is the first designer I've hired who asked about our P&L before he asked about our colors. The site he built brought us three new wholesale accounts in the first month.",
-    name: 'Marisol Haaland',
-    role: 'Founder · Halden & Oat',
-    initial: 'M',
+    quote: "Adam understood exactly what we needed. The site he built captures the essence of our workshop perfectly — professional, clean, and it actually brings in new customers.",
+    name: 'James Mitchell',
+    role: 'Owner · The Auto Shed',
+    initial: 'J',
   },
   {
-    quote: "We've worked with three agencies over the years. Adam did in six weeks what the last one couldn't do in six months — and he's the only one still answering emails.",
-    name: 'Derek Okonkwo',
-    role: 'Managing Partner · Bexley & Co.',
-    initial: 'D',
+    quote: "Working with Adam was refreshingly straightforward. He delivered a landing page that converts better than anything we've had before. Highly recommend.",
+    name: 'Sarah Chen',
+    role: 'Co-founder · Relay',
+    initial: 'S',
   },
   {
     quote: 'He gets it. He respects the craft we put into the food, and he put that same care into our site. Our reservation page converts 40% better than the platform we were on.',
     name: 'Elena Vasquez',
-    role: 'Chef & Owner · Meridian Supper Club',
+    role: 'Chef & Owner · The Golden Fork',
     initial: 'E',
   },
 ];
 
 const stats = [
-  { num: '60+', label: 'Sites shipped' },
-  { num: '9 yrs', label: 'Independent practice' },
+  { num: '3', label: 'Sites shipped' },
+  { num: '2 yrs', label: 'Building websites' },
   { num: '98', label: 'Avg. Lighthouse score' },
   { num: '100%', label: 'Clients still hosted w/ me' },
 ];
@@ -102,9 +84,9 @@ export default function Home() {
       <header className={`${styles.hero} container`}>
         <div className={styles.heroMeta}>
           <span className="pill">
-            <span className="pulse"></span> Accepting 2 new projects for Q3
+            <span className="pulse"></span> Accepting new projects
           </span>
-          <span className="eyebrow">Est. 2017 · Hosted &amp; cared for in-house</span>
+          <span className="eyebrow">Hosted &amp; cared for in-house</span>
         </div>
 
         <h1 className={`display ${styles.heroDisplay}`}>
@@ -155,19 +137,21 @@ export default function Home() {
             <div>
               <h2>
                 A small, considered roster<br />
-                <span className="serif-italic">of local businesses I&apos;m proud of.</span>
+                <span className="serif-italic">of businesses I&apos;m proud of.</span>
               </h2>
               <p className="lead" style={{ marginTop: '24px' }}>
-                Six recent builds. Each one designed, developed, and hosted end-to-end — so the site that launches is the site that keeps working a year later.
+                Recent builds. Each one designed, developed, and hosted end-to-end — so the site that launches is the site that keeps working a year later.
               </p>
             </div>
           </div>
 
           <ScrollReveal className={styles.workGrid}>
             {workItems.map((item, index) => (
-              <Link
-                href="/work"
+              <a
+                href={item.link}
                 key={index}
+                target={item.link !== '#' ? '_blank' : undefined}
+                rel={item.link !== '#' ? 'noopener noreferrer' : undefined}
                 className={`${styles.workItem} ${item.wide ? styles.workItemWide : ''}`}
               >
                 <div className={`imgframe ${item.wide ? styles.imgframeWide : styles.imgframe}`}>
@@ -184,7 +168,7 @@ export default function Home() {
                   <span className={styles.workCat}>{item.category}</span>
                 </div>
                 <p className={styles.workBlurb}>{item.blurb}</p>
-              </Link>
+              </a>
             ))}
           </ScrollReveal>
 
@@ -251,7 +235,7 @@ export default function Home() {
             <div>
               <h2>
                 What clients say<br />
-                <span className="serif-italic">a year or two in.</span>
+                <span className="serif-italic">about working together.</span>
               </h2>
             </div>
           </div>

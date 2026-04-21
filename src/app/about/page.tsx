@@ -77,8 +77,8 @@ export default function AboutPage() {
       <section className={`container ${styles.aboutHero}`}>
         <div className="imgframe" style={{ aspectRatio: '4/5' }}>
           <Image
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80&auto=format&fit=crop"
-            alt="A thoughtful portrait of a man in a linen shirt at a window."
+            src="/adam.jpg"
+            alt="Adam Berger"
             width={1200}
             height={1500}
             style={{ objectFit: 'cover', width: '100%', height: '100%' }}

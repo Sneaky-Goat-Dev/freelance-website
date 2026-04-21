@@ -211,6 +211,49 @@
   margin-top: 8px;
 }
 
+.currencyToggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.currencyBtn {
+  padding: 6px 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(255,255,255,0.6);
+  font-family: var(--mono);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.currencyBtn:hover {
+  border-color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.8);
+}
+
+.currencyBtnActive {
+  background: var(--bg);
+  color: var(--ink);
+  border-color: var(--bg);
+}
+
+.priceMonthly {
+  font-family: var(--serif);
+  font-size: 28px;
+  line-height: 1;
+  margin-top: -8px;
+}
+
+.priceMonthly span {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+}
+
 @media (max-width: 900px) {
   .pricing {
     grid-template-columns: 1fr;
