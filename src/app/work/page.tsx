@@ -23,14 +23,9 @@ const cases = [
     blurb: "A premium pre-owned vehicle dealership that needed a site reflecting the quality and care they put into every car. Sleek, trustworthy, and designed to showcase their inventory beautifully.",
     image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1400&q=80&auto=format&fit=crop',
     link: 'https://autoshed-bmw.vercel.app/',
-    results: [
-      { num: '+45%', label: 'Booking inquiries' },
-      { num: '1.1s', label: 'Largest Contentful Paint' },
-      { num: '100', label: 'Lighthouse Performance' },
-    ],
     meta: {
       scope: 'Site design, development, inventory showcase',
-      timeline: '4 weeks',
+      timeline: '5 days',
       stack: 'Next.js · Tailwind CSS · Vercel',
       hosting: 'Managed by Adam',
     },
@@ -43,14 +38,9 @@ const cases = [
     blurb: 'A modern AI-powered platform that needed a landing page as sophisticated as their product. Focused on clarity, conversion, and communicating complex features simply.',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&q=80&auto=format&fit=crop',
     link: 'https://userelay.ai',
-    results: [
-      { num: '3.2×', label: 'Demo signups' },
-      { num: '98', label: 'Lighthouse score' },
-      { num: '<2s', label: 'Time to interactive' },
-    ],
     meta: {
       scope: 'Landing page, product messaging, conversion optimization',
-      timeline: '3 weeks',
+      timeline: '5 days',
       stack: 'Next.js · Framer Motion · Vercel',
       hosting: 'Managed by Adam',
     },
@@ -63,14 +53,9 @@ const cases = [
     blurb: "A modern barbershop that wanted their online presence to match the experience in the chair. Clean booking flow, service menu, and a gallery that shows off their craft.",
     image: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1400&q=80&auto=format&fit=crop',
     link: '#',
-    results: [
-      { num: '+60%', label: 'Online bookings' },
-      { num: '850', label: 'Monthly visitors' },
-      { num: '99', label: 'Lighthouse Performance' },
-    ],
     meta: {
       scope: 'Identity, site, booking integration, gallery',
-      timeline: '4 weeks',
+      timeline: '5 days',
       stack: 'Next.js · Sanity · Booksy',
       hosting: 'Managed by Adam',
     },
@@ -142,15 +127,6 @@ export default function WorkPage() {
                     <ArrowIcon />
                   </a>
                 )}
-
-                <div className={styles.caseResults}>
-                  {caseItem.results.map((result, i) => (
-                    <div key={i}>
-                      <div className={styles.resultNum}>{result.num}</div>
-                      <div className={styles.resultLabel}>{result.label}</div>
-                    </div>
-                  ))}
-                </div>
 
                 <dl className={styles.caseMeta}>
                   <div>

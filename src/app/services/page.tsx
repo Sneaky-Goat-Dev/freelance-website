@@ -9,31 +9,31 @@ const pillars = [
   {
     num: '01',
     title: 'Design',
-    lead: "The shape of the thing before it gets built. Research, structure, typography, art direction — decisions made on paper, not in production.",
+    lead: "The shape of the thing before it gets built. Research, structure, typography, art direction — decisions made quickly, not carelessly.",
     deliverables: [
       {
         letter: 'A',
         title: 'Brand & visual system',
-        desc: "Logo refinement, type pairing, color system, and photo direction. Enough to feel distinct, restrained enough to last five years.",
-        tag: 'Week 1–2',
+        desc: "Logo refinement, type pairing, color system, and photo direction. Enough to feel distinct, restrained enough to last.",
+        tag: 'Day 1',
       },
       {
         letter: 'B',
         title: 'Sitemap & content architecture',
         desc: 'Every page earns its place. I cut ruthlessly and write headings before I draw boxes.',
-        tag: 'Week 1',
+        tag: 'Day 1',
       },
       {
         letter: 'C',
         title: 'Wireframes & high-fidelity mockups',
-        desc: 'Two rounds of flats per page, in Figma, shared live. You see the full site before I write a single line of HTML.',
-        tag: 'Week 2–3',
+        desc: 'Full-fidelity mockups in Figma, shared live. You see the full site before I write a single line of HTML.',
+        tag: 'Day 1–2',
       },
       {
         letter: 'D',
         title: 'Copywriting (collaborative)',
         desc: 'I write the first draft. You correct the voice. We land it together. Good copy is 70% of good design.',
-        tag: 'Week 2–4',
+        tag: 'Day 1–2',
       },
     ],
   },
@@ -45,26 +45,26 @@ const pillars = [
       {
         letter: 'A',
         title: 'Static-first architecture',
-        desc: 'Next.js or Astro depending on what the site needs. CDN-delivered. Typical largest-contentful-paint under 1.5s on a 3G phone.',
-        tag: 'Week 3–5',
+        desc: 'Next.js or Astro depending on what the site needs. CDN-delivered. Fast loading on any device.',
+        tag: 'Day 2–4',
       },
       {
         letter: 'B',
         title: "CMS you'll actually use",
         desc: 'Sanity or a lightweight Markdown flow. Edit pages like Google Docs. No "page builder" with 40 nested blocks.',
-        tag: 'Week 4–5',
+        tag: 'Day 3–4',
       },
       {
         letter: 'C',
         title: 'Integrations that fit',
         desc: 'Shopify, Stripe, booking systems, Formspree, Mailchimp, Calendly — whatever your business already runs on.',
-        tag: 'Week 4–6',
+        tag: 'Day 3–4',
       },
       {
         letter: 'D',
         title: 'Accessibility & performance QA',
-        desc: "WCAG AA minimum, AAA where it matters. Real-device testing. Lighthouse scores I'd show my mom.",
-        tag: 'Week 5–6',
+        desc: "WCAG AA minimum, AAA where it matters. Real-device testing. Performance optimized.",
+        tag: 'Day 4–5',
       },
     ],
   },
@@ -127,7 +127,7 @@ const faqs = [
   },
   {
     q: 'How long does a project take?',
-    a: 'Four to eight weeks, depending on scope and complexity. Most projects land around six weeks from kickoff to launch.',
+    a: 'Five days. I work fast and focused. You get a complete, polished site ready to launch by the end of the week.',
   },
   {
     q: 'What if I already have a designer?',
@@ -260,10 +260,10 @@ export default function ServicesPage() {
                 <li>Custom design tailored to your brand</li>
                 <li>Fully responsive development</li>
                 <li>CMS for easy content updates</li>
-                <li>Performance optimized (98+ Lighthouse)</li>
+                <li>Performance optimized</li>
                 <li>SSL, CDN, and daily backups</li>
                 <li>Ongoing support & small edits included</li>
-                <li>4–6 week turnaround</li>
+                <li>5-day turnaround</li>
               </ul>
 
               <div className={styles.priceFoot}>
