@@ -11,7 +11,7 @@ const filters = [
   { id: 'all', label: 'All' },
   { id: 'automotive', label: 'Automotive' },
   { id: 'saas', label: 'SaaS' },
-  { id: 'hospitality', label: 'Hospitality' },
+  { id: 'grooming', label: 'Grooming' },
 ];
 
 const cases = [
@@ -20,8 +20,8 @@ const cases = [
     category: 'automotive',
     year: '2025',
     title: 'The Auto Shed',
-    blurb: "A BMW specialist workshop needed a site that conveyed their expertise and passion for German engineering. Clean, professional, and built to convert visitors into booked appointments.",
-    image: 'https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=1400&q=80&auto=format&fit=crop',
+    blurb: "A premium pre-owned vehicle dealership that needed a site reflecting the quality and care they put into every car. Sleek, trustworthy, and designed to showcase their inventory beautifully.",
+    image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1400&q=80&auto=format&fit=crop',
     link: 'https://autoshed-bmw.vercel.app/',
     results: [
       { num: '+45%', label: 'Booking inquiries' },
@@ -29,7 +29,7 @@ const cases = [
       { num: '100', label: 'Lighthouse Performance' },
     ],
     meta: {
-      scope: 'Site design, development, booking integration',
+      scope: 'Site design, development, inventory showcase',
       timeline: '4 weeks',
       stack: 'Next.js · Tailwind CSS · Vercel',
       hosting: 'Managed by Adam',
@@ -41,7 +41,7 @@ const cases = [
     year: '2025',
     title: 'Relay',
     blurb: 'A modern AI-powered platform that needed a landing page as sophisticated as their product. Focused on clarity, conversion, and communicating complex features simply.',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1400&q=80&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&q=80&auto=format&fit=crop',
     link: 'https://userelay.ai',
     results: [
       { num: '3.2×', label: 'Demo signups' },
@@ -57,21 +57,21 @@ const cases = [
   },
   {
     id: 3,
-    category: 'hospitality',
+    category: 'grooming',
     year: '2024',
-    title: 'The Golden Fork',
-    blurb: "A farm-to-table restaurant with menus that change seasonally. The site needed to feel as warm and inviting as the dining room itself, with easy menu updates and reservation integration.",
-    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=80&auto=format&fit=crop',
+    title: 'Blade & Throne',
+    blurb: "A modern barbershop that wanted their online presence to match the experience in the chair. Clean booking flow, service menu, and a gallery that shows off their craft.",
+    image: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1400&q=80&auto=format&fit=crop',
     link: '#',
     results: [
-      { num: '+55%', label: 'Online reservations' },
-      { num: '2,100', label: 'Newsletter subscribers' },
+      { num: '+60%', label: 'Online bookings' },
+      { num: '850', label: 'Monthly visitors' },
       { num: '99', label: 'Lighthouse Performance' },
     ],
     meta: {
-      scope: 'Identity, site, menu CMS, reservation integration',
-      timeline: '5 weeks',
-      stack: 'Next.js · Sanity · OpenTable',
+      scope: 'Identity, site, booking integration, gallery',
+      timeline: '4 weeks',
+      stack: 'Next.js · Sanity · Booksy',
       hosting: 'Managed by Adam',
     },
   },

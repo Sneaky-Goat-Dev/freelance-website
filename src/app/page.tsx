@@ -6,10 +6,10 @@ import styles from './home.module.css';
 
 const workItems = [
   {
-    title: 'The Auto Shed — BMW Specialists',
+    title: 'The Auto Shed — Premium Dealership',
     category: 'Automotive · 2025',
-    blurb: "A BMW specialist workshop that needed a site conveying expertise and passion for German engineering. Clean, professional, built to convert.",
-    image: 'https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=1600&q=80&auto=format&fit=crop',
+    blurb: "A premium pre-owned vehicle dealership. Sleek, trustworthy, designed to showcase their quality inventory.",
+    image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600&q=80&auto=format&fit=crop',
     link: 'https://autoshed-bmw.vercel.app/',
     wide: true,
   },
@@ -17,15 +17,15 @@ const workItems = [
     title: 'Relay',
     category: 'SaaS · 2025',
     blurb: 'An AI-powered platform that needed a landing page as sophisticated as their product. Focused on clarity and conversion.',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80&auto=format&fit=crop',
     link: 'https://userelay.ai',
     wide: false,
   },
   {
-    title: 'The Golden Fork',
-    category: 'Restaurant · 2024',
-    blurb: 'A farm-to-table restaurant with seasonal menus. Warm, inviting, with easy updates and reservation integration.',
-    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80&auto=format&fit=crop',
+    title: 'Blade & Throne',
+    category: 'Barbershop · 2024',
+    blurb: 'A modern barbershop with a clean booking flow and gallery that shows off their craft.',
+    image: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1200&q=80&auto=format&fit=crop',
     link: '#',
     wide: false,
   },
@@ -51,7 +51,7 @@ const services = [
 
 const testimonials = [
   {
-    quote: "Adam understood exactly what we needed. The site he built captures the essence of our workshop perfectly — professional, clean, and it actually brings in new customers.",
+    quote: "Adam understood exactly what we needed. The site he built captures the premium feel of our dealership perfectly — professional, clean, and it actually brings in new customers.",
     name: 'James Mitchell',
     role: 'Owner · The Auto Shed',
     initial: 'J',
@@ -63,10 +63,10 @@ const testimonials = [
     initial: 'S',
   },
   {
-    quote: 'He gets it. He respects the craft we put into the food, and he put that same care into our site. Our reservation page converts 40% better than the platform we were on.',
-    name: 'Elena Vasquez',
-    role: 'Chef & Owner · The Golden Fork',
-    initial: 'E',
+    quote: 'He gets it. He respects the craft we put into every cut, and he put that same care into our site. Online bookings are up 60% since launch.',
+    name: 'Marcus Thompson',
+    role: 'Owner · Blade & Throne',
+    initial: 'M',
   },
 ];
 
