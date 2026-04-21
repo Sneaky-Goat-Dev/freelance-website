@@ -231,13 +231,22 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <div className={styles.pricing} style={{ justifyContent: 'center' }}>
-            <div className={`${styles.price} ${styles.priceFeature}`} style={{ maxWidth: '480px' }}>
-              <span className={styles.priceTag}>Complete Package</span>
-              <h3>Design, Build & Host</h3>
+          <div className={styles.pricingSingle}>
+            <div className={styles.priceSingle}>
+              <div className={styles.priceLeft}>
+                <span className={styles.priceTag}>Complete Package</span>
+                <h3>Design, Build & Host</h3>
 
-              <div className={styles.currencyToggle}>
-                  <span className="eyebrow" style={{ marginRight: '12px' }}>Currency:</span>
+                <div className={styles.priceAmt}>
+                  {pricing.symbol}{pricing.oneOff}<small>once-off</small>
+                </div>
+                <div className={styles.priceMonthly}>
+                  + {pricing.symbol}{pricing.monthly}/mo
+                  <span>for hosting & maintenance</span>
+                </div>
+
+                <div className={styles.currencyToggle}>
+                  <span className="eyebrow">Currency:</span>
                   {(['ZAR', 'USD', 'GBP'] as Currency[]).map((cur) => (
                     <button
                       key={cur}
@@ -248,35 +257,28 @@ export default function ServicesPage() {
                     </button>
                   ))}
                 </div>
-
-              <div className={styles.priceAmt}>
-                {pricing.symbol}{pricing.oneOff} <small>once-off</small>
-              </div>
-              <div className={styles.priceMonthly}>
-                + {pricing.symbol}{pricing.monthly}/mo <span>for hosting & maintenance</span>
               </div>
 
-              <ul>
-                <li>Custom design tailored to your brand</li>
-                <li>Fully responsive development</li>
-                <li>CMS for easy content updates</li>
-                <li>Performance optimized</li>
-                <li>SSL, CDN, and daily backups</li>
-                <li>Ongoing support & small edits included</li>
-                <li>5-day turnaround</li>
-              </ul>
+              <div className={styles.priceRight}>
+                <ul>
+                  <li>Custom design tailored to your brand</li>
+                  <li>Fully responsive development</li>
+                  <li>CMS for easy content updates</li>
+                  <li>Performance optimized</li>
+                  <li>SSL, CDN, and daily backups</li>
+                  <li>Ongoing support & small edits included</li>
+                  <li>5-day turnaround</li>
+                </ul>
 
-              <div className={styles.priceFoot}>
-                Prices shown in {pricing.locale} currency. Working with businesses in the US, UK, and South Africa.
+                <div className={styles.priceFoot}>
+                  Prices shown in {pricing.locale} currency. Working with businesses in the US, UK, and South Africa.
+                </div>
+
+                <Link className={`btn ${styles.priceCta}`} href="/contact">
+                  Let&apos;s talk
+                  <ArrowIcon />
+                </Link>
               </div>
-
-              <Link
-                className={`btn btn-ghost ${styles.priceCta}`}
-                href="/contact"
-                style={{ borderColor: 'rgba(255,255,255,0.2)', color: 'var(--bg)' }}
-              >
-                Let&apos;s talk
-              </Link>
             </div>
           </div>
         </div>
