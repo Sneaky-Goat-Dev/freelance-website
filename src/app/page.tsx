@@ -16,7 +16,7 @@ const workItems = [
     title: 'Relay',
     category: 'SaaS · 2025',
     blurb: 'AI-powered customer support automation. A landing page built for clarity and conversion.',
-    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80&auto=format&fit=crop',
     link: 'https://userelay.ai',
   },
 ];
