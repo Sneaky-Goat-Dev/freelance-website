@@ -52,23 +52,29 @@
   gap: 32px;
 }
 
+.workGridTwo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+}
+
 .workItem {
-  grid-column: span 6;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.workItemWide {
-  grid-column: span 12;
-}
-
 .imgframe {
-  aspect-ratio: 4/3;
+  aspect-ratio: 3/2;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
 }
 
-.imgframeWide {
-  aspect-ratio: 16/7;
+@media (max-width: 780px) {
+  .workGridTwo {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 
 .workMeta {
@@ -102,12 +108,6 @@
   max-width: 52ch;
 }
 
-@media (max-width: 780px) {
-  .workItem,
-  .workItemWide {
-    grid-column: span 12;
-  }
-}
 
 /* Services Grid */
 .servicesGrid {
@@ -171,8 +171,8 @@
 
 .statNum {
   font-family: var(--serif);
-  font-size: clamp(40px, 4.5vw, 64px);
-  line-height: 1;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.1;
   letter-spacing: -0.02em;
 }
 

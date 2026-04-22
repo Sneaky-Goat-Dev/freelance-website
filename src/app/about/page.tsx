@@ -5,22 +5,22 @@ import styles from './about.module.css';
 
 const career = [
   {
-    year: '2025 — Present',
+    year: '2025 - Present',
     role: 'Freelance Web Development',
-    desc: 'Building fast, focused websites for small businesses. Design, development, and hosting — all in one place.',
+    desc: 'Building fast, focused websites for small businesses. Design, development, and hosting all in one place.',
   },
   {
-    year: '2024 — 2025',
+    year: '2024 - 2025',
     role: 'Software Engineer · Africa Wildlife Tracking',
     desc: 'Built software for wildlife conservation and tracking systems. Cloud infrastructure, full-stack development.',
   },
   {
-    year: '2023 — 2024',
+    year: '2023 - 2024',
     role: 'Software Engineer · CustomApp',
     desc: 'Full-stack development and cloud infrastructure. Learned to ship fast and iterate based on real feedback.',
   },
   {
-    year: '2022 — 2025',
+    year: '2022 - 2025',
     role: 'University of Pretoria',
     desc: 'Self-taught software engineering alongside formal studies. Built projects, broke things, learned by doing.',
   },
@@ -33,7 +33,7 @@ const values = [
   },
   {
     title: 'A real phone number.',
-    desc: "Saved in your phone as \"Adam\" — not a help desk, not a ticketing portal, not a ten-minute chat queue.",
+    desc: "Saved in your phone as \"Adam\", not a help desk or ticketing portal.",
   },
   {
     title: 'Honest fit checks.',
@@ -69,10 +69,10 @@ export default function AboutPage() {
         <div>
           <h2 style={{ fontSize: 'clamp(32px, 3.5vw, 48px)' }}>Hi, I&apos;m Adam.</h2>
           <p className={`lead ${styles.heroLead}`}>
-            I&apos;m a self-taught software engineer based in Johannesburg. I&apos;ve spent the last few years building software — from wildlife tracking systems to SaaS products — and now I help small businesses get online with clean, fast websites.
+            I&apos;m a self-taught software engineer based in Johannesburg. I&apos;ve spent the last few years building software, from wildlife tracking systems to SaaS products, and now I help small businesses get online with clean, fast websites.
           </p>
           <p className={`lead ${styles.heroLead}`}>
-            I work alone on purpose. It means every conversation you have is with the person doing the work. Decisions happen fast. And when something needs fixing, there&apos;s no ticket queue — just me.
+            I work alone on purpose. Every conversation you have is with the person doing the work. Decisions happen fast. And when something needs fixing, there&apos;s no ticket queue, just me.
           </p>
         </div>
       </section>
@@ -96,10 +96,10 @@ export default function AboutPage() {
                 A small business deserves a website built with the same <em>craft</em> a luxury brand gets. The budget is smaller. The stakes are bigger.
               </p>
               <p>
-                A good site should feel like walking into the best version of your shop — the shelves straight, the lighting right, the person behind the counter <em>actually looking up</em> when the bell rings.
+                A good site should feel like walking into the best version of your shop. The shelves straight, the lighting right, the person behind the counter <em>actually looking up</em> when the bell rings.
               </p>
               <p>
-                Software rots. That&apos;s a fact. My job isn&apos;t just to build a site — it&apos;s to be the person still paying attention to it three years from now, when the integrations have shifted and the browser has moved on.
+                Software rots. My job isn&apos;t just to build a site, it&apos;s to be the person still paying attention to it years from now.
               </p>
               <p>
                 If my fee saves you more in direct bookings, wholesale leads, or agency retainers than it costs you inside a year, I&apos;ve done my job. If not, we should talk honestly about why.

@@ -5,8 +5,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Adam Berger — Websites for businesses that mean business.",
-  description: "Adam Berger designs, builds, and hosts websites for small and mid-sized businesses. Based in the U.S. Available worldwide.",
+  title: "Adam Berger | Websites for businesses that mean business.",
+  description: "Adam Berger designs, builds, and hosts websites for small and mid-sized businesses. Working with clients in the US, UK, and South Africa.",
 };
 
 export default function RootLayout({

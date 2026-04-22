@@ -11,7 +11,6 @@ const filters = [
   { id: 'all', label: 'All' },
   { id: 'automotive', label: 'Automotive' },
   { id: 'saas', label: 'SaaS' },
-  { id: 'grooming', label: 'Grooming' },
 ];
 
 const cases = [
@@ -20,13 +19,13 @@ const cases = [
     category: 'automotive',
     year: '2025',
     title: 'The Auto Shed',
-    blurb: "A premium pre-owned vehicle dealership that needed a site reflecting the quality and care they put into every car. Sleek, trustworthy, and designed to showcase their inventory beautifully.",
-    image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1400&q=80&auto=format&fit=crop',
+    blurb: "A premium pre-owned vehicle dealership. Clean design that builds trust and showcases their quality inventory.",
+    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1400&q=80&auto=format&fit=crop',
     link: 'https://autoshed-bmw.vercel.app/',
     meta: {
-      scope: 'Site design, development, inventory showcase',
+      scope: 'Design, development, inventory showcase',
       timeline: '5 days',
-      stack: 'Next.js · Tailwind CSS · Vercel',
+      stack: 'Next.js, Tailwind CSS, Vercel',
       hosting: 'Managed by Adam',
     },
   },
@@ -35,28 +34,13 @@ const cases = [
     category: 'saas',
     year: '2025',
     title: 'Relay',
-    blurb: 'A modern AI-powered platform that needed a landing page as sophisticated as their product. Focused on clarity, conversion, and communicating complex features simply.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&q=80&auto=format&fit=crop',
+    blurb: 'AI-powered customer support automation. A landing page built for clarity and conversion.',
+    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1400&q=80&auto=format&fit=crop',
     link: 'https://userelay.ai',
     meta: {
-      scope: 'Landing page, product messaging, conversion optimization',
+      scope: 'Landing page, product messaging',
       timeline: '5 days',
-      stack: 'Next.js · Framer Motion · Vercel',
-      hosting: 'Managed by Adam',
-    },
-  },
-  {
-    id: 3,
-    category: 'grooming',
-    year: '2024',
-    title: 'Blade & Throne',
-    blurb: "A modern barbershop that wanted their online presence to match the experience in the chair. Clean booking flow, service menu, and a gallery that shows off their craft.",
-    image: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1400&q=80&auto=format&fit=crop',
-    link: '#',
-    meta: {
-      scope: 'Identity, site, booking integration, gallery',
-      timeline: '5 days',
-      stack: 'Next.js · Sanity · Booksy',
+      stack: 'Next.js, Framer Motion, Vercel',
       hosting: 'Managed by Adam',
     },
   },
@@ -72,12 +56,12 @@ export default function WorkPage() {
   return (
     <>
       <header className={`${styles.pageHead} container`}>
-        <span className="eyebrow">Work / 2024 – 2025</span>
+        <span className="eyebrow">Work / 2025</span>
         <h1 className="display" style={{ marginTop: '16px' }}>
-          Three stories, <span className="serif-italic">three businesses.</span>
+          Selected <span className="serif-italic">projects.</span>
         </h1>
         <p className="lead">
-          Every project below was designed, built, and is hosted by me personally. Pick one to see how it came together — the constraints, the decisions, the numbers.
+          Each project designed, built, and hosted by me.
         </p>
 
         <div className={styles.filters}>

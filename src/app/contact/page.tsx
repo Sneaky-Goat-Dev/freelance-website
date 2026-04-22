@@ -40,7 +40,7 @@ export default function ContactPage() {
           <span className="serif-italic">something good.</span>
         </h1>
         <p className="lead" style={{ marginTop: '24px' }}>
-          Fill out the form — or just say hi. I read every message myself and reply within one business day.
+          Fill out the form or just say hi. I read every message and reply within one business day.
         </p>
       </header>
 
@@ -103,7 +103,7 @@ export default function ContactPage() {
             </form>
           ) : (
             <div className={styles.success}>
-              <h3>Thank you — I&apos;ve got it.</h3>
+              <h3>Thank you, I&apos;ve got it.</h3>
               <p>
                 I&apos;ll be back in touch within one business day. If it&apos;s urgent, email me directly at{' '}
                 <a href="mailto:hello@adam-berger.com" style={{ color: 'var(--accent)' }}>

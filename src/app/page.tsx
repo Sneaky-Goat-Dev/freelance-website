@@ -6,28 +6,18 @@ import styles from './home.module.css';
 
 const workItems = [
   {
-    title: 'The Auto Shed — Premium Dealership',
+    title: 'The Auto Shed',
     category: 'Automotive · 2025',
-    blurb: "A premium pre-owned vehicle dealership. Sleek, trustworthy, designed to showcase their quality inventory.",
-    image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600&q=80&auto=format&fit=crop',
+    blurb: "A premium pre-owned vehicle dealership. Clean design that builds trust and showcases quality inventory.",
+    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&q=80&auto=format&fit=crop',
     link: 'https://autoshed-bmw.vercel.app/',
-    wide: true,
   },
   {
     title: 'Relay',
     category: 'SaaS · 2025',
-    blurb: 'An AI-powered platform that needed a landing page as sophisticated as their product. Focused on clarity and conversion.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80&auto=format&fit=crop',
+    blurb: 'AI-powered customer support automation. A landing page built for clarity and conversion.',
+    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80&auto=format&fit=crop',
     link: 'https://userelay.ai',
-    wide: false,
-  },
-  {
-    title: 'Blade & Throne',
-    category: 'Barbershop · 2024',
-    blurb: 'A modern barbershop with a clean booking flow and gallery that shows off their craft.',
-    image: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1200&q=80&auto=format&fit=crop',
-    link: '#',
-    wide: false,
   },
 ];
 
@@ -35,46 +25,25 @@ const services = [
   {
     num: '01',
     title: 'Design',
-    desc: "Brand-aware visual design, typography, and layout. Wireframes and full-fidelity mockups before a single line of code. Your brand, sharpened — not flattened.",
+    desc: "Visual design, typography, and layout shaped around your brand and your customers.",
   },
   {
     num: '02',
     title: 'Development',
-    desc: 'Hand-built on a clean, modern stack. Fast to load, accessible, CMS-friendly, and easy to update. No bloat, no heavy page-builder tax.',
+    desc: 'Hand-built on a modern stack. Fast, accessible, and easy to update.',
   },
   {
     num: '03',
     title: 'Hosting & Care',
-    desc: 'I host every site I build. Daily backups, SSL, monitoring, small content edits — a flat monthly fee and a phone number that reaches a human.',
-  },
-];
-
-const testimonials = [
-  {
-    quote: "Adam understood exactly what we needed. The site he built captures the premium feel of our dealership perfectly — professional, clean, and it actually brings in new customers.",
-    name: 'James Mitchell',
-    role: 'Owner · The Auto Shed',
-    initial: 'J',
-  },
-  {
-    quote: "Working with Adam was refreshingly straightforward. He delivered a landing page that converts better than anything we've had before. Highly recommend.",
-    name: 'Sarah Chen',
-    role: 'Co-founder · Relay',
-    initial: 'S',
-  },
-  {
-    quote: 'He gets it. He respects the craft we put into every cut, and he put that same care into our site. Online bookings are up 60% since launch.',
-    name: 'Marcus Thompson',
-    role: 'Owner · Blade & Throne',
-    initial: 'M',
+    desc: 'I host every site I build. Backups, SSL, monitoring, and ongoing support included.',
   },
 ];
 
 const stats = [
-  { num: '3', label: 'Sites shipped' },
-  { num: '2 yrs', label: 'Building websites' },
-  { num: '98', label: 'Avg. Lighthouse score' },
-  { num: '100%', label: 'Clients still hosted w/ me' },
+  { num: 'Fast', label: '5-day turnaround' },
+  { num: 'Reliable', label: 'Built to last' },
+  { num: 'Direct', label: 'You talk to me' },
+  { num: 'Ongoing', label: 'Hosting included' },
 ];
 
 export default function Home() {
@@ -95,7 +64,7 @@ export default function Home() {
 
         <div className={styles.heroSub}>
           <p className="lead">
-            I&apos;m Adam — an independent designer &amp; developer. I design, build, and host websites
+            I&apos;m Adam, an independent designer and developer. I design, build, and host websites
             for small and mid-sized businesses who want a site that looks considered,
             loads fast, and quietly pays for itself.
           </p>
@@ -133,33 +102,33 @@ export default function Home() {
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">01 — Selected Work</span>
+            <span className="eyebrow">01 / Selected Work</span>
             <div>
               <h2>
-                A small, considered roster<br />
-                <span className="serif-italic">of businesses I&apos;m proud of.</span>
+                Recent projects<br />
+                <span className="serif-italic">I&apos;m proud of.</span>
               </h2>
               <p className="lead" style={{ marginTop: '24px' }}>
-                Recent builds. Each one designed, developed, and hosted end-to-end — so the site that launches is the site that keeps working a year later.
+                Designed, developed, and hosted end-to-end.
               </p>
             </div>
           </div>
 
-          <ScrollReveal className={styles.workGrid}>
+          <ScrollReveal className={styles.workGridTwo}>
             {workItems.map((item, index) => (
               <a
                 href={item.link}
                 key={index}
-                target={item.link !== '#' ? '_blank' : undefined}
-                rel={item.link !== '#' ? 'noopener noreferrer' : undefined}
-                className={`${styles.workItem} ${item.wide ? styles.workItemWide : ''}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.workItem}
               >
-                <div className={`imgframe ${item.wide ? styles.imgframeWide : styles.imgframe}`}>
+                <div className={`imgframe ${styles.imgframe}`}>
                   <Image
                     src={item.image}
                     alt={item.title}
-                    width={item.wide ? 1600 : 1200}
-                    height={item.wide ? 700 : 900}
+                    width={1200}
+                    height={800}
                     style={{ objectFit: 'cover', width: '100%', height: '100%' }}
                   />
                 </div>
@@ -174,7 +143,7 @@ export default function Home() {
 
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '64px' }}>
             <Link className="btn btn-ghost" href="/work">
-              View all case studies
+              View case studies
               <ArrowIcon />
             </Link>
           </div>
@@ -185,11 +154,11 @@ export default function Home() {
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">02 — What I Do</span>
+            <span className="eyebrow">02 / What I Do</span>
             <div>
               <h2>
-                Design, development, and hosting —<br />
-                <span className="serif-italic">from one person who actually picks up the phone.</span>
+                Design, development, and hosting<br />
+                <span className="serif-italic">from one person.</span>
               </h2>
             </div>
           </div>
@@ -227,38 +196,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="section">
-        <div className="container">
-          <div className="section-head">
-            <span className="eyebrow">03 — Testimonials</span>
-            <div>
-              <h2>
-                What clients say<br />
-                <span className="serif-italic">about working together.</span>
-              </h2>
-            </div>
-          </div>
-
-          <div className={styles.testimonials}>
-            <div className={styles.testiGrid}>
-              {testimonials.map((testi, index) => (
-                <div key={index} className={styles.testi}>
-                  <q>{testi.quote}</q>
-                  <div className={styles.testiAuthor}>
-                    <span className={styles.avatar}>{testi.initial}</span>
-                    <div>
-                      <div className={styles.testiName}>{testi.name}</div>
-                      <div className={styles.testiRole}>{testi.role}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className={styles.ctaBlock}>
         <div className="container">
@@ -267,7 +204,7 @@ export default function Home() {
             <span className="serif-italic">something good.</span>
           </h2>
           <p className="lead" style={{ margin: '0 auto 40px' }}>
-            Project inquiries, coffee chats, and the occasional rescue job. All welcome.
+            Ready to discuss your project? Get in touch.
           </p>
           <Link className="btn btn-primary" href="/contact">
             Start a project

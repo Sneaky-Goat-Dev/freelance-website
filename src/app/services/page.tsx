@@ -9,12 +9,12 @@ const pillars = [
   {
     num: '01',
     title: 'Design',
-    lead: "You tell me what you need, I design it. Clean, considered, and built to last. No endless revisions — just good work, done fast.",
+    lead: "You tell me what you need, I design it. Clean, considered, and built to last.",
     deliverables: [
       {
         letter: 'A',
         title: 'Visual direction',
-        desc: "Typography, color, layout — shaped around your brand and what works for your customers.",
+        desc: "Typography, color, and layout shaped around your brand.",
         tag: 'Day 1–2',
       },
       {
@@ -83,7 +83,7 @@ const pricingByCurrency: Record<Currency, PricingData> = {
 const faqs = [
   {
     q: 'Do I have to host with you?',
-    a: "Yes. It's a package, not a menu. I host every site I build because that's how I make sure it still works a year from now — and because the integrated pricing saves you hassle. If you absolutely need to host elsewhere, I can recommend another builder.",
+    a: "Yes. I host every site I build because that's how I make sure it still works a year from now. If you need to host elsewhere, I can recommend another builder.",
   },
   {
     q: 'What happens if I want to leave?',
