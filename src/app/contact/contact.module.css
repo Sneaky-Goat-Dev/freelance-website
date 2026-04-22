@@ -1,5 +1,5 @@
 .pageHead {
-  padding: clamp(56px, 8vw, 120px) 0 clamp(24px, 4vw, 48px);
+  padding: clamp(48px, 6vw, 80px) 0 clamp(20px, 3vw, 40px);
 }
 
 .contactGrid {
@@ -96,14 +96,14 @@
 }
 
 .chips input + label:hover {
-  border-color: var(--ink-mute);
-  color: var(--ink);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .chips input:checked + label {
-  background: var(--ink);
+  background: var(--accent);
   color: var(--bg);
-  border-color: var(--ink);
+  border-color: var(--accent);
 }
 
 .budgetGrid {
@@ -230,6 +230,32 @@
   text-align: center;
 }
 
+.successIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 28px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 .success h3 {
   font-size: 36px;
   font-family: var(--serif);
@@ -239,4 +265,25 @@
 .success p {
   color: var(--ink-soft);
   margin: 0;
+}
+
+.fieldError {
+  color: oklch(0.6 0.2 25);
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: var(--bg);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

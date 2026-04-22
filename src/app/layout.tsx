@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import PageTransition from "@/components/PageTransition";
 
 export const metadata: Metadata = {
   title: "Adam Berger | Websites for businesses that mean business.",
@@ -35,7 +36,9 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <Navigation />
-          {children}
+          <PageTransition>
+            {children}
+          </PageTransition>
           <Footer />
         </ThemeProvider>
       </body>

@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, FormEvent } from 'react';
+import { useState } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import ArrowIcon from '@/components/ArrowIcon';
 import styles from './contact.module.css';
 
@@ -13,15 +14,12 @@ const serviceOptions = [
   { id: 's-other', value: 'other', label: 'Not sure yet' },
 ];
 
+// Replace with your Formspree form ID from https://formspree.io
+const FORMSPREE_FORM_ID = 'xanywpkn';
 
 export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
+  const [state, handleSubmit] = useForm(FORMSPREE_FORM_ID);
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
 
   const toggleService = (value: string) => {
     setSelectedServices((prev) =>
@@ -46,16 +44,30 @@ export default function ContactPage() {
 
       <main className={`container ${styles.contactGrid}`}>
         <div>
-          {!submitted ? (
+          {state.succeeded ? (
+            <div className={styles.success}>
+              <div className={styles.successIcon}>✓</div>
+              <h3>Thank you, I&apos;ve got it.</h3>
+              <p>
+                I&apos;ll be back in touch within one business day. If it&apos;s urgent, email me directly at{' '}
+                <a href="mailto:hello@adam-berger.com" style={{ color: 'var(--accent)' }}>
+                  hello@adam-berger.com
+                </a>
+                .
+              </p>
+            </div>
+          ) : (
             <form onSubmit={handleSubmit}>
               <div className={styles.field}>
                 <label htmlFor="name">Your name</label>
                 <input id="name" name="name" required placeholder="Pat Olafsson" />
+                <ValidationError prefix="Name" field="name" errors={state.errors} className={styles.fieldError} />
               </div>
 
               <div className={styles.field}>
                 <label htmlFor="email">Email</label>
                 <input id="email" name="email" type="email" required placeholder="pat@business.com" />
+                <ValidationError prefix="Email" field="email" errors={state.errors} className={styles.fieldError} />
               </div>
 
               <div className={styles.field}>
@@ -82,7 +94,6 @@ export default function ContactPage() {
                 </div>
               </div>
 
-
               <div className={styles.field}>
                 <label htmlFor="message">Tell me about the project</label>
                 <textarea
@@ -91,27 +102,26 @@ export default function ContactPage() {
                   rows={4}
                   placeholder="What does the business do, what's the site for, and what does a good outcome look like?"
                 ></textarea>
+                <ValidationError prefix="Message" field="message" errors={state.errors} className={styles.fieldError} />
               </div>
 
               <div className={styles.formFooter}>
                 <p>No newsletter. No automated drip. Just a reply from me within one business day.</p>
-                <button className="btn btn-primary" type="submit">
-                  Send it
-                  <ArrowIcon />
+                <button className="btn btn-primary" type="submit" disabled={state.submitting}>
+                  {state.submitting ? (
+                    <>
+                      <span className={styles.spinner}></span>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send it
+                      <ArrowIcon />
+                    </>
+                  )}
                 </button>
               </div>
             </form>
-          ) : (
-            <div className={styles.success}>
-              <h3>Thank you, I&apos;ve got it.</h3>
-              <p>
-                I&apos;ll be back in touch within one business day. If it&apos;s urgent, email me directly at{' '}
-                <a href="mailto:hello@adam-berger.com" style={{ color: 'var(--accent)' }}>
-                  hello@adam-berger.com
-                </a>
-                .
-              </p>
-            </div>
           )}
         </div>
 
@@ -132,7 +142,7 @@ export default function ContactPage() {
                 <span>Email</span>
               </li>
               <li>
-                <a href="#">Book a 20-min call</a>
+                <a href="https://cal.com/adam-berger" target="_blank" rel="noopener noreferrer">Book a 20-min call</a>
                 <span>Calendar</span>
               </li>
               <li>
@@ -140,7 +150,7 @@ export default function ContactPage() {
                 <span>Social</span>
               </li>
               <li>
-                <a href="#">GitHub</a>
+                <a href="https://github.com/adamberger" target="_blank" rel="noopener noreferrer">GitHub</a>
                 <span>Code</span>
               </li>
             </ul>

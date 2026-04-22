@@ -3,66 +3,51 @@
 import { useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import ArrowIcon from '@/components/ArrowIcon';
+import ScrollReveal from '@/components/ScrollReveal';
 import styles from './services.module.css';
 
-const pillars = [
+const services = [
   {
     num: '01',
     title: 'Design',
-    lead: "You tell me what you need, I design it. Clean, considered, and built to last.",
-    deliverables: [
-      {
-        letter: 'A',
-        title: 'Visual direction',
-        desc: "Typography, color, and layout shaped around your brand.",
-        tag: 'Day 1–2',
-      },
-      {
-        letter: 'B',
-        title: 'Content structure',
-        desc: 'Every page earns its place. Clear hierarchy, sharp copy, nothing wasted.',
-        tag: 'Day 1–2',
-      },
+    icon: '◐',
+    lead: "Clean, considered visual design shaped around your brand and your customers.",
+    items: [
+      'Visual direction & typography',
+      'Content structure & hierarchy',
+      'Mobile-first responsive layouts',
     ],
   },
   {
     num: '02',
     title: 'Development',
-    lead: 'Hand-built on a modern stack. Fast, accessible, and easy for you to update. No bloat, no page-builder nonsense.',
-    deliverables: [
-      {
-        letter: 'A',
-        title: 'Clean code',
-        desc: 'Built with Next.js. Fast loading, works on every device, optimized for search.',
-        tag: 'Day 2–4',
-      },
-      {
-        letter: 'B',
-        title: 'Simple editing',
-        desc: "A CMS you'll actually use. Update text and images yourself, no developer needed.",
-        tag: 'Day 3–5',
-      },
+    icon: '⌘',
+    lead: 'Hand-built on a modern stack. Fast, accessible, and easy for you to update.',
+    items: [
+      'Built with Next.js & Tailwind',
+      'SEO & performance optimized',
+      'CMS for easy content updates',
     ],
   },
   {
     num: '03',
     title: 'Hosting & Care',
-    lead: "Most agencies disappear after launch. I don't. Your site lives on infrastructure I manage, and I'm the one you email when something needs fixing.",
-    deliverables: [
-      {
-        letter: 'A',
-        title: 'Managed hosting',
-        desc: 'Global CDN, SSL, daily backups, uptime monitoring. One flat monthly fee.',
-        tag: 'Ongoing',
-      },
-      {
-        letter: 'B',
-        title: 'Content updates',
-        desc: 'Small edits included. Bigger changes turned around in a day or two.',
-        tag: 'Ongoing',
-      },
+    icon: '◉',
+    lead: "Your site lives on infrastructure I manage. I'm the one you email when something needs fixing.",
+    items: [
+      'Global CDN & SSL included',
+      'Daily backups & monitoring',
+      'Ongoing support & updates',
     ],
   },
+];
+
+const timeline = [
+  { day: 'Day 1', title: 'Kickoff', desc: 'Discovery call, scope alignment, and I get to work.' },
+  { day: 'Day 1-2', title: 'Design', desc: 'Visual direction, layouts, and content structure.' },
+  { day: 'Day 2-4', title: 'Build', desc: 'Development and staging preview for your review.' },
+  { day: 'Day 5', title: 'Launch', desc: 'Final polish, testing, and we go live.' },
+  { day: 'Ongoing', title: 'Care', desc: 'Hosting, support, and updates included.' },
 ];
 
 type Currency = 'ZAR' | 'USD' | 'GBP';
@@ -108,20 +93,16 @@ function detectCurrency(): Currency {
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   const locale = navigator.language;
 
-  // Check for South Africa
   if (timezone.includes('Johannesburg') || locale.includes('za') || locale === 'en-ZA') {
     return 'ZAR';
   }
-  // Check for UK
   if (timezone.includes('London') || locale === 'en-GB') {
     return 'GBP';
   }
-  // Default to USD
   return 'USD';
 }
 
 function subscribeToCurrency() {
-  // Currency doesn't change, but we need a valid subscription
   return () => {};
 }
 
@@ -145,39 +126,64 @@ export default function ServicesPage() {
       <header className={`${styles.pageHead} container`}>
         <span className="eyebrow">Services</span>
         <h1 className="display" style={{ marginTop: '16px' }}>
-          Three things,<br />
-          <span className="serif-italic">done thoroughly.</span>
+          Design, build, host.<br />
+          <span className="serif-italic">All in one place.</span>
         </h1>
-        <p className="lead" style={{ marginTop: '24px' }}>
-          I design, build, and host every site I take on. No subcontractors. No handoff. One person, start to finish, from the first sketch to the fifth year of uptime.
+        <p className="lead" style={{ marginTop: '24px', maxWidth: '52ch' }}>
+          No subcontractors. No handoff. One person from first sketch to fifth year of uptime.
         </p>
       </header>
 
-      <main className="container">
-        {pillars.map((pillar, index) => (
-          <section key={index} className={styles.pillar}>
-            <div className={styles.pillarHead}>
-              <div className={styles.pillarNum}>
-                {pillar.num}<em>.</em>
+      {/* Services Grid */}
+      <section className="section">
+        <div className="container">
+          <ScrollReveal className={`${styles.servicesGrid} reveal-stagger`}>
+            {services.map((service, index) => (
+              <div key={index} className={styles.serviceCard}>
+                <div className={styles.serviceHeader}>
+                  <span className={styles.serviceIcon}>{service.icon}</span>
+                  <span className={styles.serviceNum}>{service.num}</span>
+                </div>
+                <h3>{service.title}</h3>
+                <p className={styles.serviceLead}>{service.lead}</p>
+                <ul className={styles.serviceList}>
+                  {service.items.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
               </div>
-              <h2>{pillar.title}</h2>
-              <p className="lead">{pillar.lead}</p>
+            ))}
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Timeline */}
+      <section className={styles.timelineSection}>
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">Process</span>
+            <div>
+              <h2>
+                Five days,<br />
+                <span className="serif-italic">start to finish.</span>
+              </h2>
             </div>
-            <ul className={styles.deliverables}>
-              {pillar.deliverables.map((d, i) => (
-                <li key={i}>
-                  <span className={styles.dNum}>{d.letter}</span>
-                  <div className={styles.dBody}>
-                    <h4>{d.title}</h4>
-                    <p>{d.desc}</p>
-                  </div>
-                  <span className={styles.dTag}>{d.tag}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
-      </main>
+          </div>
+
+          <ScrollReveal className={styles.timeline}>
+            {timeline.map((step, index) => (
+              <div key={index} className={styles.timelineStep}>
+                <span className={styles.timelineDay}>{step.day}</span>
+                <div className={styles.timelineDot}></div>
+                <div className={styles.timelineContent}>
+                  <h4>{step.title}</h4>
+                  <p>{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </ScrollReveal>
+        </div>
+      </section>
 
       {/* Pricing */}
       <section className="section">
@@ -186,16 +192,13 @@ export default function ServicesPage() {
             <span className="eyebrow">Pricing</span>
             <div>
               <h2>
-                Simple, honest pricing.<br />
-                <span className="serif-italic">One package, everything included.</span>
+                One package.<br />
+                <span className="serif-italic">Everything included.</span>
               </h2>
-              <p className="lead" style={{ marginTop: '24px' }}>
-                No tiers to compare. No hidden fees. Just one straightforward package that includes everything you need.
-              </p>
             </div>
           </div>
 
-          <div className={styles.pricingSingle}>
+          <ScrollReveal className={styles.pricingSingle}>
             <div className={styles.priceSingle}>
               <div className={styles.priceLeft}>
                 <span className={styles.priceTag}>Complete Package</span>
@@ -228,14 +231,14 @@ export default function ServicesPage() {
                   <li>Custom design tailored to your brand</li>
                   <li>Fully responsive development</li>
                   <li>CMS for easy content updates</li>
-                  <li>Performance optimized</li>
+                  <li>Performance optimized (100 Lighthouse)</li>
                   <li>SSL, CDN, and daily backups</li>
                   <li>Ongoing support & small edits included</li>
                   <li>5-day turnaround</li>
                 </ul>
 
                 <div className={styles.priceFoot}>
-                  Prices shown in {pricing.locale} currency. Working with businesses in the US, UK, and South Africa.
+                  Prices shown in {pricing.locale} currency.
                 </div>
 
                 <Link className={`btn ${styles.priceCta}`} href="/contact">
@@ -244,7 +247,7 @@ export default function ServicesPage() {
                 </Link>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -255,13 +258,13 @@ export default function ServicesPage() {
             <span className="eyebrow">FAQ</span>
             <div>
               <h2>
-                A few things<br />
-                <span className="serif-italic">people usually ask.</span>
+                Common questions,<br />
+                <span className="serif-italic">honest answers.</span>
               </h2>
             </div>
           </div>
 
-          <div className={styles.faqList}>
+          <ScrollReveal className={styles.faqList}>
             {faqs.map((faq, index) => (
               <details
                 key={index}
@@ -272,23 +275,24 @@ export default function ServicesPage() {
                   setOpenFaq(openFaq === index ? null : index);
                 }}
               >
-                <summary>
-                  {faq.q}
-                </summary>
-                <p>{faq.a}</p>
+                <summary>{faq.q}</summary>
+                <div className={styles.faqAnswer}>
+                  <p>{faq.a}</p>
+                </div>
               </details>
             ))}
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      <section className="section" style={{ textAlign: 'center', padding: '120px 0', borderTop: '1px solid var(--rule)' }}>
+      {/* CTA */}
+      <section className={styles.ctaSection}>
         <div className="container">
           <h2 className="display">
             Ready to<br />
             <span className="serif-italic">get started?</span>
           </h2>
-          <p className="lead" style={{ margin: '24px auto 40px' }}>
+          <p className="lead" style={{ margin: '24px auto 40px', textAlign: 'center' }}>
             Tell me about the business. I&apos;ll tell you what I&apos;d do.
           </p>
           <Link className="btn btn-primary" href="/contact">

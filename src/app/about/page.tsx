@@ -160,10 +160,18 @@ export default function AboutPage() {
             Enough about me.<br />
             <span className="serif-italic">Tell me about you.</span>
           </h2>
-          <Link className="btn btn-primary" href="/contact" style={{ marginTop: '40px' }}>
-            Start a project
-            <ArrowIcon />
-          </Link>
+          <p className="lead" style={{ margin: '24px auto 40px' }}>
+            Have a project in mind? I&apos;d love to hear about it.
+          </p>
+          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link className="btn btn-primary" href="/contact">
+              Start a conversation
+              <ArrowIcon />
+            </Link>
+            <Link className="btn btn-ghost" href="/services">
+              See pricing
+            </Link>
+          </div>
         </div>
       </section>
     </>
