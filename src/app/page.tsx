@@ -83,17 +83,11 @@ export default function Home() {
       {/* Marquee */}
       <div className="marquee" aria-hidden="true">
         <div className="marquee-track">
-          {[...Array(4)].map((_, i) => (
-            <span key={i}>Design</span>
-          ))}
-          {[...Array(4)].map((_, i) => (
-            <span key={`dev-${i}`}>Development</span>
-          ))}
-          {[...Array(4)].map((_, i) => (
-            <span key={`host-${i}`}>Hosting</span>
-          ))}
-          {[...Array(4)].map((_, i) => (
-            <span key={`care-${i}`}>Care</span>
+          {[...Array(2)].map((_, setIndex) => (
+            [...Array(8)].map((_, i) => {
+              const words = ['Design', 'Development', 'Hosting'];
+              return <span key={`${setIndex}-${i}`}>{words[i % 3]}</span>;
+            })
           ))}
         </div>
       </div>
