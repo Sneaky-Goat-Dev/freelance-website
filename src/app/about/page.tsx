@@ -5,24 +5,24 @@ import styles from './about.module.css';
 
 const career = [
   {
-    year: '2020 — Present',
-    role: 'Independent studio',
-    desc: 'Founded as a design-and-dev practice for small businesses; added managed hosting in 2021 after the third client in a row came back from a "hosting company" with a broken site and a $4,000 invoice.',
+    year: '2025 — Present',
+    role: 'Freelance Web Development',
+    desc: 'Building fast, focused websites for small businesses. Design, development, and hosting — all in one place.',
   },
   {
-    year: '2017 — 2020',
-    role: 'Senior Designer · Oak Ridge Studio',
-    desc: 'A ten-person branding shop in the Midwest. Led web design for regional banks, universities, and one very patient orchestra. Learned that constraints make better work.',
+    year: '2024 — 2025',
+    role: 'Software Engineer · Africa Wildlife Tracking',
+    desc: 'Built software for wildlife conservation and tracking systems. Cloud infrastructure, full-stack development.',
   },
   {
-    year: '2015 — 2017',
-    role: 'Designer / Developer · Various',
-    desc: "Agency life, then a brief stint in-house at a SaaS company. Shipped the same landing-page template thirty different ways. Learned a lot about what I don't want to do.",
+    year: '2023 — 2024',
+    role: 'Software Engineer · CustomApp',
+    desc: 'Full-stack development and cloud infrastructure. Learned to ship fast and iterate based on real feedback.',
   },
   {
-    year: '2011 — 2015',
-    role: 'BFA, Graphic Design · RISD',
-    desc: 'Studied type, print, and book design. Learned HTML in the library to build a portfolio site. One thing led to another.',
+    year: '2022 — 2025',
+    role: 'University of Pretoria',
+    desc: 'Self-taught software engineering alongside formal studies. Built projects, broke things, learned by doing.',
   },
 ];
 
@@ -69,10 +69,10 @@ export default function AboutPage() {
         <div>
           <h2 style={{ fontSize: 'clamp(32px, 3.5vw, 48px)' }}>Hi, I&apos;m Adam.</h2>
           <p className={`lead ${styles.heroLead}`}>
-            I&apos;ve been building websites for small businesses for nine years — the last six as a one-person studio operating out of a garage office with good light and a stubborn cat. I studied design, learned to code by accident, and kept doing both because I couldn&apos;t stand handing my designs to a developer who didn&apos;t care about them the way I did.
+            I&apos;m a self-taught software engineer based in Johannesburg. I&apos;ve spent the last few years building software — from wildlife tracking systems to SaaS products — and now I help small businesses get online with clean, fast websites.
           </p>
           <p className={`lead ${styles.heroLead}`}>
-            The studio stays at one person on purpose. It means every conversation you have is with the person doing the work. It means decisions happen fast. And it means when something goes wrong on a Saturday morning, there&apos;s no ticket queue between you and the fix.
+            I work alone on purpose. It means every conversation you have is with the person doing the work. Decisions happen fast. And when something needs fixing, there&apos;s no ticket queue — just me.
           </p>
         </div>
       </section>

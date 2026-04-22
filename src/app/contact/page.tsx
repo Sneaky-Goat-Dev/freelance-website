@@ -136,7 +136,7 @@ export default function ContactPage() {
                 <span>Calendar</span>
               </li>
               <li>
-                <a href="#">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/adam-berger-1b80a1266/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <span>Social</span>
               </li>
               <li>
