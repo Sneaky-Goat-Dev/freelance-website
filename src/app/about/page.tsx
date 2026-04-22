@@ -45,24 +45,6 @@ const values = [
   },
 ];
 
-const offHours = [
-  {
-    image: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=900&q=80&auto=format&fit=crop',
-    alt: 'Stack of well-worn books and a coffee cup.',
-    caption: 'Reading · mostly nonfiction',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80&auto=format&fit=crop',
-    alt: 'A hiking trail winding through mountains at sunset.',
-    caption: 'Walking · long, slow, no phone',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=900&q=80&auto=format&fit=crop',
-    alt: 'Fresh-baked sourdough loaves on a cooling rack.',
-    caption: 'Baking · badly, but happily',
-  },
-];
-
 export default function AboutPage() {
   return (
     <>
@@ -167,36 +149,6 @@ export default function AboutPage() {
                 <h4>{value.title}</h4>
                 <p>{value.desc}</p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
-          <div className="section-head">
-            <span className="eyebrow">Off hours</span>
-            <div>
-              <h2>
-                When I&apos;m not at the screen<br />
-                <span className="serif-italic">you can find me here.</span>
-              </h2>
-            </div>
-          </div>
-          <div className={styles.offHours}>
-            {offHours.map((item, index) => (
-              <figure key={index}>
-                <div className="imgframe" style={{ aspectRatio: '1/1' }}>
-                  <Image
-                    src={item.image}
-                    alt={item.alt}
-                    width={900}
-                    height={900}
-                    style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-                  />
-                </div>
-                <figcaption>{item.caption}</figcaption>
-              </figure>
             ))}
           </div>
         </div>
