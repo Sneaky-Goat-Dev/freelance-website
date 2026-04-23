@@ -226,8 +226,8 @@
   border: 1px solid var(--rule);
   border-radius: var(--radius-lg);
   padding: clamp(40px, 5vw, 60px);
-  background: var(--ink);
-  color: var(--bg);
+  background: #0E0E10;
+  color: #F7F4EE;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(32px, 4vw, 60px);
@@ -257,7 +257,7 @@
 .priceSingle h3 {
   margin: 0;
   font-size: clamp(28px, 3vw, 36px);
-  color: var(--bg);
+  color: #F7F4EE;
 }
 
 .priceAmt {
@@ -265,7 +265,7 @@
   font-size: clamp(48px, 6vw, 72px);
   line-height: 1;
   letter-spacing: -0.02em;
-  color: var(--bg);
+  color: #F7F4EE;
 }
 
 .priceAmt small {
@@ -281,7 +281,7 @@
   font-family: var(--serif);
   font-size: clamp(24px, 3vw, 32px);
   line-height: 1;
-  color: var(--bg);
+  color: #F7F4EE;
 }
 
 .priceMonthly span {
@@ -325,9 +325,9 @@
 }
 
 .currencyBtnActive {
-  background: var(--bg);
-  color: var(--ink);
-  border-color: var(--bg);
+  background: #F7F4EE;
+  color: #0E0E10;
+  border-color: #F7F4EE;
 }
 
 .priceSingle ul {
@@ -368,9 +368,9 @@
 .priceCta {
   margin-top: 24px;
   align-self: flex-start;
-  background: var(--bg);
-  color: var(--ink);
-  border-color: var(--bg);
+  background: #F7F4EE;
+  color: #0E0E10;
+  border-color: #F7F4EE;
 }
 
 .priceCta:hover {
@@ -391,7 +391,6 @@
 /* FAQ */
 .faqList {
   border-top: 1px solid var(--rule);
-  max-width: 800px;
 }
 
 .faq {
