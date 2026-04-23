@@ -68,27 +68,6 @@ const promises = [
   },
 ];
 
-const testimonials = [
-  {
-    quote: "Adam delivered exactly what we needed in less time than we expected. The site looks premium and our customers notice.",
-    name: "Sarah Mitchell",
-    role: "The Auto Shed",
-    initial: "S",
-  },
-  {
-    quote: "Finally, a developer who actually listens. No jargon, no upsells, just solid work delivered on time.",
-    name: "James Cooper",
-    role: "Relay AI",
-    initial: "J",
-  },
-  {
-    quote: "Working with Adam felt like having someone on our team. Fast responses, thoughtful suggestions, and a site we're proud of.",
-    name: "Lisa Chen",
-    role: "Bloom Studio",
-    initial: "L",
-  },
-];
-
 export default function Home() {
   return (
     <>
@@ -277,38 +256,6 @@ export default function Home() {
                 <p>{promise.desc}</p>
               </div>
             ))}
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="section">
-        <div className="container">
-          <div className="section-head">
-            <span className="eyebrow">Kind Words</span>
-            <div>
-              <h2>
-                What clients say<br />
-                <span className="serif-italic">about working together.</span>
-              </h2>
-            </div>
-          </div>
-
-          <ScrollReveal className={`testimonials`}>
-            <div className="testi-grid">
-              {testimonials.map((testi, index) => (
-                <div key={index} className="testi">
-                  <q>{testi.quote}</q>
-                  <div className="testi-author">
-                    <div className="testi-avatar">{testi.initial}</div>
-                    <div>
-                      <div className="testi-name">{testi.name}</div>
-                      <div className="testi-role">{testi.role}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </ScrollReveal>
         </div>
       </section>
