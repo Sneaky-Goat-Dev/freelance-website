@@ -9,8 +9,6 @@ const serviceOptions = [
   { id: 's-new', value: 'new-site', label: 'A new site' },
   { id: 's-rebuild', value: 'rebuild', label: 'Rebuild an existing site' },
   { id: 's-brand', value: 'brand', label: 'Brand refresh' },
-  { id: 's-host', value: 'hosting', label: 'Move hosting to you' },
-  { id: 's-rescue', value: 'rescue', label: 'Rescue job' },
   { id: 's-other', value: 'other', label: 'Not sure yet' },
 ];
 
@@ -129,8 +127,7 @@ export default function ContactPage() {
           <div className={styles.availabilityStrip}>
             <span className="pulse"></span>
             <div>
-              <strong>Booking Q3 &amp; Q4 2026</strong>
-              <small>2 slots remaining this quarter</small>
+              <strong>Accepting new projects</strong>
             </div>
           </div>
 
@@ -148,10 +145,6 @@ export default function ContactPage() {
               <li>
                 <a href="https://www.linkedin.com/in/adam-berger-1b80a1266/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <span>Social</span>
-              </li>
-              <li>
-                <a href="https://github.com/adamberger" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <span>Code</span>
               </li>
             </ul>
           </div>

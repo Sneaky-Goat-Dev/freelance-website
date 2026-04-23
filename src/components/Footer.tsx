@@ -30,7 +30,6 @@ export default function Footer() {
               <li><a href="mailto:hello@adam-berger.com">hello@adam-berger.com</a></li>
               <li><Link href="/contact">Book a call</Link></li>
               <li><a href="https://www.linkedin.com/in/adam-berger-1b80a1266/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-              <li><a href="https://github.com/adamberger" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             </ul>
           </div>
           <div>

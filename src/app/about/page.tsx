@@ -51,8 +51,7 @@ export default function AboutPage() {
       <header className={`${styles.pageHead} container`}>
         <span className="eyebrow">About</span>
         <h1 className="display" style={{ marginTop: '16px' }}>
-          One person.<br />
-          <span className="serif-italic">On purpose.</span>
+          About <em>Me</em>
         </h1>
       </header>
 

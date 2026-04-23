@@ -70,6 +70,7 @@ html {
 
 body {
   margin: 0;
+  padding-top: 72px;
   background: var(--bg);
   color: var(--ink);
   font-family: var(--sans);
@@ -153,8 +154,10 @@ p.lead, .lead {
 
 /* Navigation */
 .nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
   background: color-mix(in oklab, var(--bg) 88%, transparent);
   backdrop-filter: saturate(1.2) blur(14px);
