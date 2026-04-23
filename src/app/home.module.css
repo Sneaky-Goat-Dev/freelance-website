@@ -226,15 +226,11 @@
   }
 }
 
-/* More Work Grid */
-.moreWork {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+/* Second Work */
+.secondWork {
   margin-top: 64px;
   padding-top: 48px;
   border-top: 1px solid var(--rule);
-  align-items: center;
 }
 
 .workItem {

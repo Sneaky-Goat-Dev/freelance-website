@@ -16,12 +16,16 @@ const featuredWork = {
   ],
 };
 
-const moreWork = {
+const secondWork = {
   title: 'Relay',
   category: 'SaaS · 2025',
   blurb: 'AI-powered customer support automation. A landing page built for clarity and conversion.',
-  image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80&auto=format&fit=crop',
+  image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=80&auto=format&fit=crop',
   link: 'https://userelay.ai',
+  stats: [
+    { num: '5', label: 'Days to launch' },
+    { num: '100', label: 'Lighthouse score' },
+  ],
 };
 
 const services = [
@@ -191,35 +195,41 @@ export default function Home() {
             </a>
           </ScrollReveal>
 
-          <ScrollReveal className={styles.moreWork}>
+          <ScrollReveal className={styles.secondWork}>
             <a
-              href={moreWork.link}
+              href={secondWork.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={styles.workItem}
+              className={styles.featuredWork}
             >
-              <div className={`imgframe ${styles.imgframe}`}>
-                <Image
-                  src={moreWork.image}
-                  alt={moreWork.title}
-                  width={800}
-                  height={600}
-                  style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-                />
+              <div className={styles.featuredImage}>
+                <div className="imgframe" style={{ aspectRatio: '16/10' }}>
+                  <Image
+                    src={secondWork.image}
+                    alt={secondWork.title}
+                    width={1600}
+                    height={1000}
+                    style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                  />
+                </div>
               </div>
-              <div className={styles.workMeta}>
-                <h3 className={styles.workTitle}>{moreWork.title}</h3>
-                <span className={styles.workCat}>{moreWork.category}</span>
+              <div className={styles.featuredContent}>
+                <span className={styles.featuredCat}>{secondWork.category}</span>
+                <h3 className={styles.featuredTitle}>{secondWork.title}</h3>
+                <p className={styles.featuredBlurb}>{secondWork.blurb}</p>
+                <div className={styles.featuredStats}>
+                  {secondWork.stats.map((stat, i) => (
+                    <div key={i} className={styles.featuredStat}>
+                      <span className={styles.featuredStatNum}>{stat.num}</span>
+                      <span className={styles.featuredStatLabel}>{stat.label}</span>
+                    </div>
+                  ))}
+                </div>
+                <span className={styles.featuredLink}>
+                  View project <ArrowIcon />
+                </span>
               </div>
-              <p className={styles.workBlurb}>{moreWork.blurb}</p>
             </a>
-            <div className={styles.workCta}>
-              <p>Each project designed, built, and hosted end-to-end by me.</p>
-              <Link className="btn btn-ghost" href="/contact">
-                Yours could be next
-                <ArrowIcon />
-              </Link>
-            </div>
           </ScrollReveal>
         </div>
       </section>
