@@ -98,7 +98,7 @@ export default function Home() {
           </div>
 
           <h1 className={`display ${styles.heroDisplay} hero-animate-delay-1`}>
-            Websites for businesses that <em>mean business.</em>
+            Websites for businesses that<br /><em>mean business.</em>
           </h1>
 
           <div className={`${styles.heroSub} hero-animate-delay-2`}>
