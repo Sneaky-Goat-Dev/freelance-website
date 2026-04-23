@@ -108,7 +108,7 @@ a { color: inherit; text-decoration: none; }
   margin: 0;
   text-wrap: balance;
 }
-.display em { font-style: italic; color: var(--accent); }
+.display em { font-style: italic; color: var(--accent); white-space: nowrap; }
 
 h1, h2, h3, h4 {
   font-family: var(--serif);
