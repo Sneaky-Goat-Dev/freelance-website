@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import NewsletterForm from './NewsletterForm';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -38,6 +39,9 @@ export default function Footer() {
               <li><span style={{ color: 'var(--ink-soft)', fontSize: '14px' }}>Johannesburg, South Africa</span></li>
               <li><span style={{ color: 'var(--ink-mute)', fontSize: '13px' }}>GMT+2</span></li>
             </ul>
+          </div>
+          <div>
+            <NewsletterForm />
           </div>
         </div>
         <div className="footer-bottom">
