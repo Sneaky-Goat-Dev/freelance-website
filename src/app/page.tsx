@@ -48,7 +48,7 @@ const promises = [
   },
   {
     title: '5-day delivery',
-    desc: 'From kickoff to launch in one focused week.',
+    desc: 'From kickoff to launch in one focused week. Larger projects scoped accordingly.',
   },
   {
     title: 'Direct line',

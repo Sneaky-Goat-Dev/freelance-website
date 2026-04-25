@@ -76,7 +76,7 @@ const faqs = [
   },
   {
     q: 'How long does a project take?',
-    a: 'Five days. I work fast and focused. You get a complete, polished site ready to launch by the end of the week.',
+    a: "Five days for a standard site. I work fast and focused. Larger or more complex projects may take longer—I'll scope it honestly upfront.",
   },
   {
     q: 'What if I already have a designer?',
@@ -234,11 +234,11 @@ export default function ServicesPage() {
                   <li>Performance optimized (100 Lighthouse)</li>
                   <li>SSL, CDN, and daily backups</li>
                   <li>Ongoing support & small edits included</li>
-                  <li>5-day turnaround</li>
+                  <li>5-day turnaround for standard sites</li>
                 </ul>
 
                 <div className={styles.priceFoot}>
-                  Prices shown in {pricing.locale} currency.
+                  Prices shown in {pricing.locale} currency. Larger projects quoted individually.
                 </div>
 
                 <Link className={`btn ${styles.priceCta}`} href="/contact">
