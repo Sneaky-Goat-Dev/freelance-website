@@ -79,10 +79,10 @@ export default function AboutPage() {
       <section className={styles.manifesto}>
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">A short manifesto</span>
+            <span className="eyebrow">My approach</span>
             <div>
               <h2>
-                What I believe<br />
+                How I think<br />
                 <span className="serif-italic">about this work.</span>
               </h2>
             </div>
@@ -92,16 +92,16 @@ export default function AboutPage() {
             <div></div>
             <div>
               <p>
-                A small business deserves a website built with the same <em>craft</em> a luxury brand gets. The budget is smaller. The stakes are bigger.
+                Small businesses deserve the same quality of work that larger companies get. Different budget, same standards.
               </p>
               <p>
-                A good site should feel like walking into the best version of your shop. The shelves straight, the lighting right, the person behind the counter <em>actually looking up</em> when the bell rings.
+                A website should represent your business well—clear, professional, and easy for customers to use.
               </p>
               <p>
-                Software rots. My job isn&apos;t just to build a site, it&apos;s to be the person still paying attention to it years from now.
+                Websites require ongoing attention. I don&apos;t just build and disappear. I maintain what I create.
               </p>
               <p>
-                If my fee saves you more in direct bookings, wholesale leads, or agency retainers than it costs you inside a year, I&apos;ve done my job. If not, we should talk honestly about why.
+                The goal is <em>return on investment</em>. If your site brings in more business than it costs, we&apos;ve done this right.
               </p>
             </div>
           </div>
@@ -111,7 +111,7 @@ export default function AboutPage() {
       <section className={styles.career}>
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">A short career</span>
+            <span className="eyebrow">My career</span>
             <div>
               <h2>
                 How I got here<br />
