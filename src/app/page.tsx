@@ -10,10 +10,6 @@ const featuredWork = {
   blurb: "A premium pre-owned vehicle dealership needed a website that could match the quality of their inventory. Clean design, seamless browsing, and a focus on building trust with potential buyers.",
   image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&q=80&auto=format&fit=crop',
   link: 'https://autoshed-bmw.vercel.app/',
-  stats: [
-    { num: '5', label: 'Days to launch' },
-    { num: '100', label: 'Lighthouse score' },
-  ],
 };
 
 const secondWork = {
@@ -22,10 +18,6 @@ const secondWork = {
   blurb: 'AI-powered customer support automation. A landing page built for clarity and conversion.',
   image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=80&auto=format&fit=crop',
   link: 'https://userelay.ai',
-  stats: [
-    { num: '5', label: 'Days to launch' },
-    { num: '100', label: 'Lighthouse score' },
-  ],
 };
 
 const services = [
@@ -186,14 +178,6 @@ export default function Home() {
                 <span className={styles.featuredCat}>{featuredWork.category}</span>
                 <h3 className={styles.featuredTitle}>{featuredWork.title}</h3>
                 <p className={styles.featuredBlurb}>{featuredWork.blurb}</p>
-                <div className={styles.featuredStats}>
-                  {featuredWork.stats.map((stat, i) => (
-                    <div key={i} className={styles.featuredStat}>
-                      <span className={styles.featuredStatNum}>{stat.num}</span>
-                      <span className={styles.featuredStatLabel}>{stat.label}</span>
-                    </div>
-                  ))}
-                </div>
                 <span className={styles.featuredLink}>
                   View project <ArrowIcon />
                 </span>
@@ -223,14 +207,6 @@ export default function Home() {
                 <span className={styles.featuredCat}>{secondWork.category}</span>
                 <h3 className={styles.featuredTitle}>{secondWork.title}</h3>
                 <p className={styles.featuredBlurb}>{secondWork.blurb}</p>
-                <div className={styles.featuredStats}>
-                  {secondWork.stats.map((stat, i) => (
-                    <div key={i} className={styles.featuredStat}>
-                      <span className={styles.featuredStatNum}>{stat.num}</span>
-                      <span className={styles.featuredStatLabel}>{stat.label}</span>
-                    </div>
-                  ))}
-                </div>
                 <span className={styles.featuredLink}>
                   View project <ArrowIcon />
                 </span>
