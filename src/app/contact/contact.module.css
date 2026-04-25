@@ -1,5 +1,5 @@
 .pageHead {
-  padding: clamp(80px, 10vw, 140px) 0 clamp(20px, 3vw, 40px);
+  padding: clamp(40px, 8vw, 100px) 0 clamp(20px, 3vw, 40px);
 }
 
 .contactGrid {
@@ -12,6 +12,16 @@
 @media (max-width: 900px) {
   .contactGrid {
     grid-template-columns: 1fr;
+  }
+
+  .pageHead {
+    padding: clamp(32px, 6vw, 60px) 0 clamp(16px, 2vw, 24px);
+  }
+}
+
+@media (max-width: 500px) {
+  .contactGrid {
+    padding: clamp(24px, 4vw, 48px) 0 clamp(60px, 8vw, 100px);
   }
 }
 
@@ -120,6 +130,21 @@
 @media (max-width: 500px) {
   .contactGrid form {
     padding: 24px;
+  }
+
+  .formFooter {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .formFooter p {
+    max-width: none;
+  }
+
+  .formFooter .btn {
+    width: 100%;
+    justify-content: center;
   }
 }
 
@@ -304,5 +329,51 @@
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Additional mobile improvements */
+@media (max-width: 780px) {
+  .asideBlock {
+    padding: 24px;
+  }
+
+  .asideList li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .asideList li span:last-child {
+    margin-top: 2px;
+  }
+
+  .availabilityStrip {
+    padding: 16px 20px;
+  }
+
+  .availabilityStrip strong {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 500px) {
+  .success {
+    padding: 32px 24px;
+  }
+
+  .success h3 {
+    font-size: 28px;
+  }
+
+  .successIcon {
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+  }
+
+  .chips label {
+    padding: 10px 14px;
+    font-size: 13px;
   }
 }

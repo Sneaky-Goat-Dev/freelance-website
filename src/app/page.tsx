@@ -101,11 +101,41 @@ export default function Home() {
         </div>
 
         <div className={`${styles.heroVisual} hero-animate-delay-4`}>
-          <div className={`${styles.heroCard} float-animation`}>
-            <div className={styles.heroCardInner}>
-              <span className={styles.heroCardLabel}>Latest project</span>
-              <span className={styles.heroCardTitle}>The Auto Shed</span>
-              <span className={styles.heroCardMeta}>Launched 2025</span>
+          <div className={styles.heroShowcase}>
+            <a
+              href="https://autoshed-bmw.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.browserMockup} float-animation`}
+            >
+              <div className={styles.browserChrome}>
+                <div className={styles.browserDots}>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div className={styles.browserAddress}>
+                  <span>autoshed-bmw.vercel.app</span>
+                </div>
+              </div>
+              <div className={styles.browserContent}>
+                <Image
+                  src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80&auto=format&fit=crop"
+                  alt="The Auto Shed - Latest Project"
+                  width={800}
+                  height={500}
+                  style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                />
+              </div>
+              <div className={styles.browserLabel}>
+                <span className={styles.browserLabelText}>Latest project</span>
+                <span className={styles.browserLabelTitle}>The Auto Shed</span>
+              </div>
+            </a>
+
+            <div className={styles.heroExperience}>
+              <span className={styles.heroExpNumber}>8</span>
+              <span className={styles.heroExpLabel}>Years building for the web</span>
             </div>
           </div>
         </div>
@@ -129,10 +159,7 @@ export default function Home() {
           <div className="section-head">
             <span className="eyebrow">Selected Work</span>
             <div>
-              <h2>
-                Recent projects<br />
-                <span className="serif-italic">I&apos;m proud of.</span>
-              </h2>
+              <h2>Recent projects</h2>
             </div>
           </div>
 

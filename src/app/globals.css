@@ -22,7 +22,7 @@
   --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
   --container: 1240px;
-  --pad: clamp(20px, 4vw, 48px);
+  --pad: clamp(28px, 6vw, 64px);
 
   --radius-sm: 4px;
   --radius: 10px;
@@ -857,4 +857,116 @@ p.lead, .lead {
 
 .btn-primary:hover::before {
   left: 100%;
+}
+
+/* Small screen optimizations */
+@media (max-width: 900px) {
+  :root {
+    --pad: 32px;
+  }
+
+  .container {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --pad: 28px;
+  }
+
+  .container {
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  :root {
+    --pad: 20px;
+  }
+
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    padding-top: 64px;
+  }
+
+  .display {
+    font-size: clamp(36px, 10vw, 64px);
+  }
+
+  .lead {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: clamp(32px, 8vw, 48px);
+  }
+
+  h2 {
+    font-size: clamp(28px, 6vw, 40px);
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+
+  .nav-inner {
+    padding: 12px 28px;
+  }
+
+  .nav-cta {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .footer {
+    padding: 48px 0 24px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+
+  .footer-big {
+    font-size: clamp(28px, 8vw, 48px);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .section {
+    padding: clamp(40px, 6vw, 60px) 0;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+  }
+
+  .eyebrow::before {
+    width: 16px;
+  }
+
+  .marquee span {
+    font-size: clamp(18px, 5vw, 28px);
+    padding: 0 20px;
+  }
+
+  .marquee span::after {
+    margin-left: 20px;
+    font-size: 12px;
+  }
 }

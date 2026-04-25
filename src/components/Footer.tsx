@@ -28,7 +28,7 @@ export default function Footer() {
           <div>
             <h5>Connect</h5>
             <ul>
-              <li><a href="mailto:hello@adam-berger.com">hello@adam-berger.com</a></li>
+              <li><a href="mailto:adam@adam-berger.com">adam@adam-berger.com</a></li>
               <li><Link href="/contact">Book a call</Link></li>
               <li><a href="https://www.linkedin.com/in/adam-berger-1b80a1266/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
             </ul>

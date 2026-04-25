@@ -1,5 +1,5 @@
 .pageHead {
-  padding: clamp(80px, 10vw, 140px) 0 clamp(32px, 4vw, 56px);
+  padding: clamp(40px, 8vw, 100px) 0 clamp(24px, 4vw, 48px);
 }
 
 /* Services Grid */
@@ -103,6 +103,28 @@
   .servicesGrid {
     grid-template-columns: 1fr;
   }
+
+  .serviceCard {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 500px) {
+  .pageHead {
+    padding: clamp(60px, 8vw, 100px) 0 clamp(24px, 3vw, 40px);
+  }
+
+  .serviceCard {
+    padding: 24px;
+  }
+
+  .serviceCard h3 {
+    font-size: 24px;
+  }
+
+  .serviceLead {
+    font-size: 14px;
+  }
 }
 
 /* Timeline */
@@ -181,38 +203,62 @@
 @media (max-width: 780px) {
   .timeline {
     flex-direction: column;
-    gap: 32px;
+    gap: 24px;
   }
 
   .timeline::before {
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 2px;
-    height: 100%;
-    transform: translateX(-50%);
+    display: none;
   }
 
   .timelineStep {
     flex-direction: row;
     text-align: left;
-    gap: 20px;
+    gap: 16px;
     align-items: flex-start;
+    padding: 20px;
+    background: var(--bg-elev);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-lg);
   }
 
   .timelineDay {
-    min-width: 80px;
+    min-width: 70px;
     margin-bottom: 0;
-    padding-top: 4px;
+    padding-top: 0;
   }
 
   .timelineDot {
-    margin-bottom: 0;
-    flex-shrink: 0;
+    display: none;
+  }
+
+  .timelineContent h4 {
+    font-size: 18px;
+    margin-bottom: 4px;
   }
 
   .timelineContent p {
     max-width: none;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 500px) {
+  .timelineSection {
+    padding: clamp(40px, 6vw, 60px) 0;
+  }
+
+  .timeline {
+    margin-top: 32px;
+  }
+
+  .timelineStep {
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+  }
+
+  .timelineDay {
+    min-width: auto;
   }
 }
 
@@ -380,11 +426,40 @@
 @media (max-width: 700px) {
   .priceSingle {
     grid-template-columns: 1fr;
+    padding: clamp(28px, 4vw, 48px);
   }
 
   .priceRight {
     padding-top: 24px;
     border-top: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .priceSingle h3 {
+    font-size: clamp(24px, 5vw, 32px);
+  }
+
+  .priceAmt {
+    font-size: clamp(40px, 10vw, 56px);
+  }
+
+  .priceMonthly {
+    font-size: clamp(20px, 5vw, 28px);
+  }
+
+  .currencyToggle {
+    flex-wrap: wrap;
+  }
+
+  .priceCta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .priceSingle li {
+    font-size: 14px;
+    padding: 12px 0;
   }
 }
 
@@ -494,4 +569,30 @@
 
 .ctaSection .display {
   position: relative;
+}
+
+@media (max-width: 500px) {
+  .ctaSection {
+    padding: clamp(60px, 8vw, 100px) 0;
+  }
+
+  .ctaSection .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .faq summary {
+    font-size: clamp(16px, 4vw, 20px);
+    padding: 20px 0;
+  }
+
+  .faq summary::after {
+    width: 28px;
+    height: 28px;
+  }
+
+  .faq p {
+    font-size: 14px;
+    padding-bottom: 20px;
+  }
 }

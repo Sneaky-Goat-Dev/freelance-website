@@ -1,5 +1,5 @@
 .pageHead {
-  padding: clamp(80px, 10vw, 140px) 0 clamp(32px, 4vw, 56px);
+  padding: clamp(40px, 8vw, 100px) 0 clamp(24px, 4vw, 48px);
 }
 
 .aboutHero {
@@ -25,6 +25,22 @@
 @media (max-width: 900px) {
   .aboutHero {
     grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .aboutHero h2 {
+    font-size: clamp(32px, 8vw, 48px);
+  }
+}
+
+@media (max-width: 500px) {
+  .pageHead {
+    padding: 32px 0 20px;
+  }
+
+  .heroLead {
+    font-size: 15px;
+    line-height: 1.6;
   }
 }
 
@@ -72,6 +88,21 @@
 @media (max-width: 900px) {
   .manifestoGrid {
     grid-template-columns: 1fr;
+  }
+
+  .manifestoGrid p {
+    font-size: clamp(18px, 4vw, 22px);
+  }
+}
+
+@media (max-width: 500px) {
+  .manifesto {
+    padding: clamp(40px, 5vw, 60px) 0;
+  }
+
+  .manifesto::before {
+    font-size: clamp(80px, 20vw, 120px);
+    top: 20px;
   }
 }
 
@@ -132,6 +163,24 @@
     margin: 0;
     padding: 24px 0;
   }
+
+  .careerRole {
+    font-size: clamp(18px, 4vw, 22px);
+  }
+}
+
+@media (max-width: 500px) {
+  .career {
+    padding: clamp(40px, 5vw, 60px) 0;
+  }
+
+  .careerList {
+    padding: 20px 0;
+  }
+
+  .careerDesc {
+    font-size: 13px;
+  }
 }
 
 .valuesGrid {
@@ -190,6 +239,15 @@
 @media (max-width: 780px) {
   .valuesGrid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .value {
+    padding: 24px;
+  }
+
+  .value h4 {
+    font-size: 20px;
   }
 }
 

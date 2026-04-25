@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useForm, ValidationError } from '@formspree/react';
+import { FormspreeProvider, useForm, ValidationError } from '@formspree/react';
 import ArrowIcon from '@/components/ArrowIcon';
 import styles from './contact.module.css';
 
@@ -12,11 +12,11 @@ const serviceOptions = [
   { id: 's-other', value: 'other', label: 'Not sure yet' },
 ];
 
-// Replace with your Formspree form ID from https://formspree.io
-const FORMSPREE_FORM_ID = 'xanywpkn';
+// Formspree Project ID from CLI deployment
+const FORMSPREE_PROJECT_ID = '2985761058859252856';
 
-export default function ContactPage() {
-  const [state, handleSubmit] = useForm(FORMSPREE_FORM_ID);
+function ContactForm() {
+  const [state, handleSubmit] = useForm('contact');
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
 
   const toggleService = (value: string) => {
@@ -48,8 +48,8 @@ export default function ContactPage() {
               <h3>Thank you, I&apos;ve got it.</h3>
               <p>
                 I&apos;ll be back in touch within one business day. If it&apos;s urgent, email me directly at{' '}
-                <a href="mailto:hello@adam-berger.com" style={{ color: 'var(--accent)' }}>
-                  hello@adam-berger.com
+                <a href="mailto:adam@adam-berger.com" style={{ color: 'var(--accent)' }}>
+                  adam@adam-berger.com
                 </a>
                 .
               </p>
@@ -135,12 +135,8 @@ export default function ContactPage() {
             <h3>Prefer a different door?</h3>
             <ul className={styles.asideList}>
               <li>
-                <a href="mailto:hello@adam-berger.com">hello@adam-berger.com</a>
+                <a href="mailto:adam@adam-berger.com">adam@adam-berger.com</a>
                 <span>Email</span>
-              </li>
-              <li>
-                <a href="https://cal.com/adam-berger" target="_blank" rel="noopener noreferrer">Book a 20-min call</a>
-                <span>Calendar</span>
               </li>
               <li>
                 <a href="https://www.linkedin.com/in/adam-berger-1b80a1266/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -180,5 +176,13 @@ export default function ContactPage() {
         </aside>
       </main>
     </>
+  );
+}
+
+export default function ContactPage() {
+  return (
+    <FormspreeProvider project={FORMSPREE_PROJECT_ID}>
+      <ContactForm />
+    </FormspreeProvider>
   );
 }
